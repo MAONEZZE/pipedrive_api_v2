@@ -1,0 +1,5 @@
+$kind: collection
+id: 5afeea59-4fb0-47a9-aaa8-e20fe736cbf5
+description: |
+  Stage is a logical component of a pipeline, and essentially a bucket that can hold a number of deals. In the context of the pipeline a stage belongs to, it has an order number which defines the order of stages in that pipeline.
+order: 15000

@@ -1,0 +1,33 @@
+$kind: http-request
+id: 59cd9bd1-a766-469f-9ccf-de95d2fe4085
+description: Updates existing options for a project custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the updated options.
+url: "{{baseUrl}}/projectFields/:field_code/options"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      },
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update project field options in bulk.resources/examples
+order: 8000

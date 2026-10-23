@@ -1,0 +1,57 @@
+$kind: http-request
+id: a0a3b7ae-bf5d-4e1e-991f-00c08426fa18
+description: Adds multiple products to a deal in a single request. Maximum of 100 products allowed per request.
+url: "{{baseUrl}}/deals/:id/products/bulk"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+body:
+  type: json
+  content: |-
+    {
+      "data": [
+        {
+          "item_price": "<number>",
+          "quantity": "<number>",
+          "product_id": "<integer>",
+          "tax": 0,
+          "comments": "<string>",
+          "discount": 0,
+          "is_enabled": true,
+          "tax_method": "<string>",
+          "discount_type": "percentage",
+          "product_variation_id": "<integer>",
+          "billing_frequency": "one-time",
+          "billing_frequency_cycles": null,
+          "billing_start_date": null
+        },
+        {
+          "item_price": "<number>",
+          "quantity": "<number>",
+          "product_id": "<integer>",
+          "tax": 0,
+          "comments": "<string>",
+          "discount": 0,
+          "is_enabled": true,
+          "tax_method": "<string>",
+          "discount_type": "percentage",
+          "product_variation_id": "<integer>",
+          "billing_frequency": "one-time",
+          "billing_frequency_cycles": null,
+          "billing_start_date": null
+        }
+      ]
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add multiple products to a deal.resources/examples
+order: 7000

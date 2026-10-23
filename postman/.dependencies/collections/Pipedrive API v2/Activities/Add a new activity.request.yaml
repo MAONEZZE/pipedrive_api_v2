@@ -1,0 +1,77 @@
+$kind: http-request
+id: b2c105ae-8144-495b-a09d-5b79ad7abedf
+description: Adds a new activity.
+url: "{{baseUrl}}/activities"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "subject": "<string>",
+      "type": "<string>",
+      "owner_id": "<integer>",
+      "deal_id": "<integer>",
+      "lead_id": "<string>",
+      "org_id": "<integer>",
+      "project_id": "<integer>",
+      "due_date": "<string>",
+      "due_time": "<string>",
+      "duration": "<string>",
+      "busy": "<boolean>",
+      "done": "<boolean>",
+      "location": {
+        "value": "<string>",
+        "country": "<string>",
+        "admin_area_level_1": "<string>",
+        "admin_area_level_2": "<string>",
+        "locality": "<string>",
+        "sublocality": "<string>",
+        "route": "<string>",
+        "street_number": "<string>",
+        "subpremise": "<string>",
+        "postal_code": "<string>"
+      },
+      "participants": [
+        {
+          "person_id": "<integer>",
+          "primary": "<boolean>"
+        },
+        {
+          "person_id": "<integer>",
+          "primary": "<boolean>"
+        }
+      ],
+      "attendees": [
+        {
+          "email": "<string>",
+          "name": "<string>",
+          "status": "<string>",
+          "is_organizer": "<boolean>",
+          "person_id": "<integer>",
+          "user_id": "<integer>"
+        },
+        {
+          "email": "<string>",
+          "name": "<string>",
+          "status": "<string>",
+          "is_organizer": "<boolean>",
+          "person_id": "<integer>",
+          "user_id": "<integer>"
+        }
+      ],
+      "public_description": "<string>",
+      "priority": "<integer>",
+      "outcome": "<integer>",
+      "note": "<string>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a new activity.resources/examples
+order: 2000

@@ -1,0 +1,22 @@
+$kind: http-request
+id: 8124e790-fe44-45db-863c-68a40217db09
+description: Deletes a product attachment from a deal, using the `product_attachment_id`.
+url: "{{baseUrl}}/deals/:id/products/:product_attachment_id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+  - key: product_attachment_id
+    value: <integer>
+    description: (Required) The product attachment ID
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete an attached product from a deal.resources/examples
+order: 6000

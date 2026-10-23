@@ -1,0 +1,22 @@
+$kind: http-request
+id: 5a439606-5f9a-4b54-92c8-27502b673903
+description: Returns all not deleted project templates.
+url: "{{baseUrl}}/projectTemplates?cursor=<string>&limit=<integer>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all project templates.resources/examples
+order: 1000

@@ -1,0 +1,33 @@
+$kind: http-request
+id: cfea28fb-8398-4c48-aa1e-f466845733e7
+description: Updates existing options for an organization custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the updated options.
+url: "{{baseUrl}}/organizationFields/:field_code/options"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      },
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update organization field options in bulk.resources/examples
+order: 8000

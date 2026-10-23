@@ -1,0 +1,5 @@
+$kind: collection
+id: 89634412-0fcb-40dd-8ce1-9cf99bb24160
+description: |
+  Pipelines are essentially ordered collections of stages.
+order: 16000

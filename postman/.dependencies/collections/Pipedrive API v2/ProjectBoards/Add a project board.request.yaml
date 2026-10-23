@@ -1,0 +1,23 @@
+$kind: http-request
+id: 72537b14-76b0-426f-8a02-7641aacbe3c2
+description: Adds a new project board.
+url: "{{baseUrl}}/boards"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "order_nr": "<integer>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a project board.resources/examples
+order: 2000

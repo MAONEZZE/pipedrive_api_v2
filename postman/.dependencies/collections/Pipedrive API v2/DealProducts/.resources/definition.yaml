@@ -1,0 +1,5 @@
+$kind: collection
+id: 8c2521c9-886e-4c54-bb27-4e599690f20f
+description: |
+  Deal products are goods or services attached to a deal. Each deal product links a product to a deal with configurable quantity, pricing, and discounts, and contributes to the total value of the deal.
+order: 4000

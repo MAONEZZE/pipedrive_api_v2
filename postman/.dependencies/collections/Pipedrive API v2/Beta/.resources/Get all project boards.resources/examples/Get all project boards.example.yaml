@@ -1,0 +1,33 @@
+$kind: http-example
+id: 78f71392-708f-420d-babe-d55e05c7aaad
+request:
+  url: "{{baseUrl}}/boards"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 1,
+            "name": "Project Board",
+            "order_nr": 1,
+            "add_time": "2024-01-01T00:00:00.000Z",
+            "update_time": "2024-01-01T00:00:00.000Z"
+          }
+        ],
+        "additional_data": null
+      }
+order: 1000

@@ -1,0 +1,19 @@
+$kind: http-request
+id: 2ba75332-1394-4884-9c6e-035d2d502264
+description: Archives a project.
+url: "{{baseUrl}}/projects/:id/archive"
+method: POST
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Archive a project.resources/examples
+order: 8000

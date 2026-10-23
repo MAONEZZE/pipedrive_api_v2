@@ -1,0 +1,32 @@
+$kind: http-request
+id: 031b9062-0c63-4040-a794-a7ac5f999271
+description: Lists products attached to a deal.
+url: "{{baseUrl}}/deals/:id/products?cursor=<string>&limit=<integer>&sort_by=id&sort_direction=asc"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: sort_by
+    value: id
+    description: "The field to sort by. Supported fields: `id`, `add_time`, `update_time`, `order_nr`."
+  - key: sort_direction
+    value: asc
+    description: "The sorting direction. Supported values: `asc`, `desc`."
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/List products attached to a deal.resources/examples
+order: 2000

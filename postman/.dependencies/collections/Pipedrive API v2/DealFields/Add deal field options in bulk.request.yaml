@@ -1,0 +1,31 @@
+$kind: http-request
+id: 0e1cc02d-3bdb-4b84-805e-78b3211f0dd9
+description: Adds new options to a deal custom field that supports options (enum or set field types). This operation is atomic - all options are added or none are added. Returns only the newly added options.
+url: "{{baseUrl}}/dealFields/:field_code/options"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "label": "<string>"
+      },
+      {
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add deal field options in bulk.resources/examples
+order: 6000

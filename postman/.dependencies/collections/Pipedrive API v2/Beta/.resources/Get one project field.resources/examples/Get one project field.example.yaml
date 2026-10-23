@@ -1,0 +1,47 @@
+$kind: http-example
+id: 32494b76-38e0-498c-bb39-f8114a7283e9
+request:
+  url: "{{baseUrl}}/projectFields/:field_code"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  pathVariables:
+    - key: field_code
+      value: <string>
+      description: (Required) The unique code identifying the field
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Project Name",
+          "field_code": "name",
+          "field_type": "varchar",
+          "options": null,
+          "subfields": null,
+          "is_custom_field": false,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true
+          },
+          "important_fields": {
+            "enabled": false,
+            "stage_ids": []
+          },
+          "required_fields": {
+            "enabled": true
+          }
+        }
+      }
+order: 1000

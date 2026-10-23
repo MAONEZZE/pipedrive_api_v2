@@ -1,0 +1,19 @@
+$kind: http-request
+id: 63005aa6-ce10-44cd-b146-02f073e61c89
+description: Returns all active project phases under a specific board.
+url: "{{baseUrl}}/phases?board_id=<integer>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: board_id
+    value: <integer>
+    description: (Required) The ID of the board for which phases are requested
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get project phases.resources/examples
+order: 20000

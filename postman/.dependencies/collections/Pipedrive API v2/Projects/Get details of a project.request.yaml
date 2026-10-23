@@ -1,0 +1,19 @@
+$kind: http-request
+id: bd4870d7-d33b-45cf-9529-4ed2b91c71cd
+description: Returns the details of a specific project. Custom fields appear as keys inside the `custom_fields` object.
+url: "{{baseUrl}}/projects/:id"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get details of a project.resources/examples
+order: 4000

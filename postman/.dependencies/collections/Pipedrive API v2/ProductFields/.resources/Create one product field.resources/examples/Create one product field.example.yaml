@@ -1,0 +1,72 @@
+$kind: http-example
+id: 8f790b1f-a59e-4892-a29e-f39dc316dfc1
+request:
+  url: "{{baseUrl}}/productFields"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "field_name": "<string>",
+        "field_type": "<string>",
+        "options": [
+          {
+            "label": "<string>"
+          },
+          {
+            "label": "<string>"
+          }
+        ],
+        "ui_visibility": {
+          "add_visible_flag": false,
+          "details_visible_flag": true,
+          "key_0": 5377.40889582131
+        }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Categories",
+          "field_code": "946947d1b02fd3ef20798d6112ec5d895a686a21",
+          "field_type": "set",
+          "options": [
+            {
+              "id": 1,
+              "label": "Software",
+              "color": "blue"
+            },
+            {
+              "id": 2,
+              "label": "Hardware",
+              "color": "green"
+            },
+            {
+              "id": 3,
+              "label": "Services",
+              "color": "orange"
+            }
+          ],
+          "subfields": null,
+          "is_custom_field": true,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true
+          }
+        }
+      }
+order: 1000

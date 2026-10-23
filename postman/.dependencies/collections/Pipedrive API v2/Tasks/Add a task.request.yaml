@@ -1,0 +1,35 @@
+$kind: http-request
+id: b3f36370-b46b-4afc-a5e7-f82171ad2cd5
+description: Adds a new task.
+url: "{{baseUrl}}/tasks"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "<string>",
+      "project_id": "<integer>",
+      "parent_task_id": "<integer>",
+      "description": "<string>",
+      "done": "<integer>",
+      "milestone": "<integer>",
+      "due_date": "<date>",
+      "start_date": "<date>",
+      "assignee_id": "<integer>",
+      "assignee_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "priority": "<integer>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a task.resources/examples
+order: 2000

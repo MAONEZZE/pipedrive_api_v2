@@ -1,0 +1,81 @@
+$kind: http-request
+id: e7fcf13e-b666-4778-a41c-0ff40f71f8c6
+description: Updates the properties of an activity.
+url: "{{baseUrl}}/activities/:id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the activity
+body:
+  type: json
+  content: |-
+    {
+      "subject": "<string>",
+      "type": "<string>",
+      "owner_id": "<integer>",
+      "deal_id": "<integer>",
+      "lead_id": "<string>",
+      "org_id": "<integer>",
+      "project_id": "<integer>",
+      "due_date": "<string>",
+      "due_time": "<string>",
+      "duration": "<string>",
+      "busy": "<boolean>",
+      "done": "<boolean>",
+      "location": {
+        "value": "<string>",
+        "country": "<string>",
+        "admin_area_level_1": "<string>",
+        "admin_area_level_2": "<string>",
+        "locality": "<string>",
+        "sublocality": "<string>",
+        "route": "<string>",
+        "street_number": "<string>",
+        "subpremise": "<string>",
+        "postal_code": "<string>"
+      },
+      "participants": [
+        {
+          "person_id": "<integer>",
+          "primary": "<boolean>"
+        },
+        {
+          "person_id": "<integer>",
+          "primary": "<boolean>"
+        }
+      ],
+      "attendees": [
+        {
+          "email": "<string>",
+          "name": "<string>",
+          "status": "<string>",
+          "is_organizer": "<boolean>",
+          "person_id": "<integer>",
+          "user_id": "<integer>"
+        },
+        {
+          "email": "<string>",
+          "name": "<string>",
+          "status": "<string>",
+          "is_organizer": "<boolean>",
+          "person_id": "<integer>",
+          "user_id": "<integer>"
+        }
+      ],
+      "public_description": "<string>",
+      "priority": "<integer>",
+      "outcome": "<integer>",
+      "note": "<string>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update an activity.resources/examples
+order: 5000

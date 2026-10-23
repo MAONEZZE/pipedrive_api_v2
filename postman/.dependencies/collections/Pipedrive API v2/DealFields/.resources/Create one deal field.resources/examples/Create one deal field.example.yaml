@@ -1,0 +1,110 @@
+$kind: http-example
+id: 061951e7-12d4-4c1f-ad5b-7fd726fbc007
+request:
+  url: "{{baseUrl}}/dealFields"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "field_name": "<string>",
+        "field_type": "<string>",
+        "options": [
+          {
+            "label": "<string>"
+          },
+          {
+            "label": "<string>"
+          }
+        ],
+        "ui_visibility": {
+          "add_visible_flag": false,
+          "details_visible_flag": true,
+          "projects_detail_visible_flag": false,
+          "show_in_pipelines": {
+            "show_in_all": true,
+            "pipeline_ids": [
+              "<integer>",
+              "<integer>"
+            ]
+          }
+        },
+        "important_fields": {
+          "enabled": false
+        },
+        "required_fields": {
+          "enabled": false,
+          "statuses": {}
+        },
+        "description": "<string>"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Priority",
+          "field_code": "946947d1b02fd3ef20798d6112ec5d895a686a21",
+          "description": "Priority level for the deal",
+          "field_type": "enum",
+          "options": [
+            {
+              "id": 1,
+              "label": "Low",
+              "color": "green"
+            },
+            {
+              "id": 2,
+              "label": "Medium",
+              "color": "yellow"
+            },
+            {
+              "id": 3,
+              "label": "High",
+              "color": "red"
+            }
+          ],
+          "subfields": null,
+          "is_custom_field": true,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true,
+            "projects_detail_visible_flag": false,
+            "show_in_pipelines": {
+              "show_in_all": false,
+              "pipeline_ids": [
+                1,
+                2
+              ]
+            }
+          },
+          "important_fields": {
+            "enabled": true,
+            "stage_ids": [
+              5,
+              6
+            ]
+          },
+          "required_fields": {
+            "enabled": true,
+            "stage_ids": [
+              5,
+              6
+            ]
+          }
+        }
+      }
+order: 1000

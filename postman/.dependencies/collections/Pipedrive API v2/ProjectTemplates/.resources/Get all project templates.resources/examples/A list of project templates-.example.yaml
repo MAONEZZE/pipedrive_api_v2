@@ -1,0 +1,41 @@
+$kind: http-example
+id: 0603b0c1-6683-48d4-8dbc-a8e4aa00f391
+name: A list of project templates.
+request:
+  url: "{{baseUrl}}/projectTemplates?cursor=<string>&limit=100"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    cursor: <string>
+    limit: "100"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 1,
+            "title": "Office Renovation",
+            "description": "Template for office renovation projects",
+            "projects_board_id": 2,
+            "owner_id": 3,
+            "add_time": "2023-09-14T08:14:40.000Z",
+            "update_time": "2023-09-14T08:14:40.000Z"
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJhY3Rpdml0aWVzIjoyN30"
+        }
+      }
+order: 1000

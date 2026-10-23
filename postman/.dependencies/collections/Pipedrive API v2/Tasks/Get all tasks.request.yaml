@@ -1,0 +1,37 @@
+$kind: http-request
+id: 4449d6bb-49f8-4734-9d31-22ddbdb19e90
+description: Returns all tasks.
+url: "{{baseUrl}}/tasks?cursor=<string>&limit=<integer>&is_done=<boolean>&is_milestone=<boolean>&assignee_id=<integer>&project_id=<integer>&parent_task_id=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: is_done
+    value: <boolean>
+    description: Whether the task is done or not. If omitted, both done and not done tasks are returned.
+  - key: is_milestone
+    value: <boolean>
+    description: Whether the task is a milestone or not. If omitted, both milestone and non-milestone tasks are returned.
+  - key: assignee_id
+    value: <integer>
+    description: If supplied, only tasks assigned to this user are returned
+  - key: project_id
+    value: <integer>
+    description: If supplied, only tasks belonging to this project are returned
+  - key: parent_task_id
+    value: <string>
+    description: If `null` is supplied, only root-level tasks (without a parent) are returned. If an integer is supplied, only subtasks of that specific task are returned. By default all tasks are returned.
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all tasks.resources/examples
+order: 1000

@@ -1,0 +1,46 @@
+$kind: http-example
+id: 3b8a8a35-73be-4c7e-8e37-6bebb8075c38
+name: Edited installment.
+request:
+  url: "{{baseUrl}}/deals/:id/installments/:installment_id"
+  method: PATCH
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  pathVariables:
+    - key: id
+      value: <integer>
+      description: (Required) The ID of the deal
+    - key: installment_id
+      value: <integer>
+      description: (Required) The ID of the installment
+  body:
+    type: json
+    content: |-
+      {
+        "description": "<string>",
+        "amount": "<number>",
+        "billing_date": "<string>"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "id": 1,
+          "amount": 10,
+          "billing_date": "2025-03-10",
+          "deal_id": 1,
+          "description": "Delivery Fee"
+        }
+      }
+order: 1000

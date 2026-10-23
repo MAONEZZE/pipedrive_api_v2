@@ -1,0 +1,56 @@
+$kind: http-request
+id: 8772b6d0-32a4-4f39-a552-ad8139a1759d
+description: Creates a new deal custom field.
+url: "{{baseUrl}}/dealFields"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "field_type": "<string>",
+      "options": [
+        {
+          "label": "<string>"
+        },
+        {
+          "label": "<string>"
+        }
+      ],
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true,
+        "projects_detail_visible_flag": false,
+        "show_in_pipelines": {
+          "show_in_all": true,
+          "pipeline_ids": [
+            "<integer>",
+            "<integer>"
+          ]
+        }
+      },
+      "important_fields": {
+        "enabled": false,
+        "key_0": "string"
+      },
+      "required_fields": {
+        "enabled": false,
+        "statuses": {},
+        "key_0": true,
+        "key_1": true,
+        "key_2": false,
+        "key_3": false
+      },
+      "description": "<string>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Create one deal field.resources/examples
+order: 2000

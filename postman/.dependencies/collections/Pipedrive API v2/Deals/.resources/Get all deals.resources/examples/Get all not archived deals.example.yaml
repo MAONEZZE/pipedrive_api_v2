@@ -1,0 +1,90 @@
+$kind: http-example
+id: 8074f103-baed-4d30-af6f-999b02f9007a
+request:
+  url: "{{baseUrl}}/deals?filter_id=<integer>&ids=<integer>&owner_id=<integer>&person_id=<integer>&org_id=<integer>&pipeline_id=<integer>&stage_id=<integer>&status=<string>&updated_since=<string>&updated_until=<string>&sort_by=id&sort_direction=asc&include_fields=<string>&custom_fields=<string>&include_option_labels=<boolean>&include_labels=<boolean>&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    filter_id: <integer>
+    ids: <integer>
+    owner_id: <integer>
+    person_id: <integer>
+    org_id: <integer>
+    pipeline_id: <integer>
+    stage_id: <integer>
+    status: <string>
+    updated_since: <string>
+    updated_until: <string>
+    sort_by: id
+    sort_direction: asc
+    include_fields: <string>
+    custom_fields: <string>
+    include_option_labels: <boolean>
+    include_labels: <boolean>
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 1,
+            "title": "Deal Title",
+            "creator_user_id": 1,
+            "owner_id": 1,
+            "value": 200,
+            "person_id": 1,
+            "org_id": 1,
+            "stage_id": 1,
+            "pipeline_id": 1,
+            "currency": "USD",
+            "archive_time": "2021-01-01T00:00:00Z",
+            "add_time": "2021-01-01T00:00:00Z",
+            "update_time": "2021-01-01T00:00:00Z",
+            "stage_change_time": "2021-01-01T00:00:00Z",
+            "status": "open",
+            "is_archived": false,
+            "is_deleted": false,
+            "probability": 90,
+            "lost_reason": "Lost Reason",
+            "visible_to": 7,
+            "close_time": "2021-01-01T00:00:00Z",
+            "won_time": "2021-01-01T00:00:00Z",
+            "lost_time": "2021-01-01T00:00:00Z",
+            "local_won_date": "2021-01-01",
+            "local_lost_date": "2021-01-01",
+            "local_close_date": "2021-01-01",
+            "expected_close_date": "2021-01-01",
+            "label_ids": [
+              1,
+              2,
+              3
+            ],
+            "origin": "ManuallyCreated",
+            "origin_id": null,
+            "channel": 52,
+            "channel_id": "Jun23 Billboards",
+            "source_lead_id": "35b0d604-eb0d-42d0-be11-eac8832051f0",
+            "acv": 120,
+            "arr": 120,
+            "mrr": 10,
+            "custom_fields": {}
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

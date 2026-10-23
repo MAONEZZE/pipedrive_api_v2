@@ -1,0 +1,23 @@
+$kind: http-request
+id: e98364c1-bea9-4387-9fb9-5d2c2840a739
+description: Adds a new pipeline.
+url: "{{baseUrl}}/pipelines"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "is_deal_probability_enabled": false
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a new pipeline.resources/examples
+order: 2000

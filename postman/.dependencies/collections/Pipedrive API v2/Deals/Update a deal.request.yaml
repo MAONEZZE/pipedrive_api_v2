@@ -1,0 +1,51 @@
+$kind: http-request
+id: 1766fab0-c9e3-4cb5-9553-af3b8bb5dfde
+description: Updates the properties of a deal.
+url: "{{baseUrl}}/deals/:id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+body:
+  type: json
+  content: |-
+    {
+      "title": "<string>",
+      "owner_id": "<integer>",
+      "person_id": "<integer>",
+      "org_id": "<integer>",
+      "pipeline_id": "<integer>",
+      "stage_id": "<integer>",
+      "value": "<number>",
+      "currency": "<string>",
+      "is_deleted": "<boolean>",
+      "is_archived": "<boolean>",
+      "archive_time": "<string>",
+      "status": "<string>",
+      "probability": "<number>",
+      "lost_reason": "<string>",
+      "visible_to": "<integer>",
+      "close_time": "<string>",
+      "won_time": "<string>",
+      "lost_time": "<string>",
+      "expected_close_date": "<date>",
+      "label_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "custom_fields": {
+        "key_0": 8107
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update a deal.resources/examples
+order: 6000

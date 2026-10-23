@@ -1,0 +1,36 @@
+$kind: http-example
+id: 08f9fcb9-588d-41bb-a09e-6d99530a33d0
+request:
+  url: "{{baseUrl}}/productFields/:field_code"
+  method: DELETE
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  pathVariables:
+    - key: field_code
+      value: <string>
+      description: (Required) The unique code identifying the field
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Custom text field",
+          "field_code": "946947d1b02fd3ef20798d6112ec5d895a686a21",
+          "field_type": "varchar",
+          "options": null,
+          "subfields": null,
+          "is_custom_field": true,
+          "is_optional_response_field": false
+        }
+      }
+order: 1000

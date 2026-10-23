@@ -1,0 +1,26 @@
+$kind: http-request
+id: 6d0e65d8-5008-4000-be91-efb07b1440d2
+description: Adds a new stage, returns the ID upon success.
+url: "{{baseUrl}}/stages"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "pipeline_id": "<integer>",
+      "deal_probability": "<integer>",
+      "is_deal_rot_enabled": "<boolean>",
+      "days_to_rotten": "<integer>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a new stage.resources/examples
+order: 2000

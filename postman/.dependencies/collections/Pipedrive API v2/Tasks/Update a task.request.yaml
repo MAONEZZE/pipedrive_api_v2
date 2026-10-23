@@ -1,0 +1,39 @@
+$kind: http-request
+id: d42d5a09-8440-43c9-8219-58be0c09af7a
+description: Updates a task.
+url: "{{baseUrl}}/tasks/:id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the task
+body:
+  type: json
+  content: |-
+    {
+      "title": "<string>",
+      "project_id": "<integer>",
+      "parent_task_id": "<integer>",
+      "description": "<string>",
+      "done": "<integer>",
+      "milestone": "<integer>",
+      "due_date": "<date>",
+      "start_date": "<date>",
+      "assignee_id": "<integer>",
+      "assignee_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "priority": "<integer>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update a task.resources/examples
+order: 4000

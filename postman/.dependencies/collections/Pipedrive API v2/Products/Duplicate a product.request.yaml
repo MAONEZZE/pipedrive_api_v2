@@ -1,0 +1,19 @@
+$kind: http-request
+id: 544e4e4d-424d-471e-b2e6-f44fc3112fc2
+description: Creates a duplicate of an existing product including all variations, prices, and custom fields.
+url: "{{baseUrl}}/products/:id/duplicate"
+method: POST
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the product
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Duplicate a product.resources/examples
+order: 11000

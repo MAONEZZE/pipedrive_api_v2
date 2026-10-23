@@ -1,0 +1,33 @@
+$kind: http-request
+id: c2a022a9-50a4-47b6-b1f0-5f4b397b1953
+description: Updates existing options for a person custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the updated options.
+url: "{{baseUrl}}/personFields/:field_code/options"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      },
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update person field options in bulk.resources/examples
+order: 8000

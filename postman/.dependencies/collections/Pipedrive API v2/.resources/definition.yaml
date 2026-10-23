@@ -1,0 +1,5 @@
+$kind: collection
+id: 95516085-5e8d-40db-8509-258b8b3b22a9
+description: ""
+variables:
+  baseUrl: https://api.pipedrive.com/api/v2

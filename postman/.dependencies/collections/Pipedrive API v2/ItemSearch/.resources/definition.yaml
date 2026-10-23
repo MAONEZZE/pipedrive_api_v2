@@ -1,0 +1,5 @@
+$kind: collection
+id: 8b4f4f91-0438-4ea6-865c-8402cfbf6870
+description: |
+  Ordered reference objects, pointing to either deals, persons, organizations, leads, products, files or mail attachments.
+order: 14000

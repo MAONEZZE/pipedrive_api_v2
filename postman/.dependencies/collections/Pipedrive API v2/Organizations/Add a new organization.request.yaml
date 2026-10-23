@@ -1,0 +1,49 @@
+$kind: http-request
+id: fab36663-a370-4d0f-8c19-104b23274ada
+description: Adds a new organization.
+url: "{{baseUrl}}/organizations"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "owner_id": "<integer>",
+      "add_time": "<string>",
+      "visible_to": "<integer>",
+      "label_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "address": {
+        "value": "<string>",
+        "country": "<string>",
+        "admin_area_level_1": "<string>",
+        "admin_area_level_2": "<string>",
+        "locality": "<string>",
+        "sublocality": "<string>",
+        "route": "<string>",
+        "street_number": "<string>",
+        "subpremise": "<string>",
+        "postal_code": "<string>"
+      },
+      "website": "<string>",
+      "linkedin": "<string>",
+      "industry": "<integer>",
+      "annual_revenue": "<integer>",
+      "employee_count": "<integer>",
+      "custom_fields": {
+        "key_0": 3626
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a new organization.resources/examples
+order: 2000

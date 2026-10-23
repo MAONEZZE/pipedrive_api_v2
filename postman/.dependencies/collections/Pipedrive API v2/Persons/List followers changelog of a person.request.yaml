@@ -1,0 +1,26 @@
+$kind: http-request
+id: b9d95eb5-cf58-4983-b94e-f0db828a5b68
+description: Lists changelogs about users have followed the person.
+url: "{{baseUrl}}/persons/:id/followers/changelog?limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the person
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/List followers changelog of a person.resources/examples
+order: 8000

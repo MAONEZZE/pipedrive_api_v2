@@ -1,0 +1,63 @@
+$kind: http-example
+id: fde8aefd-2fe4-4d81-a855-6289bdf3c465
+request:
+  url: "{{baseUrl}}/projects/archived?filter_id=<integer>&status=open,completed&phase_id=<integer>&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    filter_id: <integer>
+    status: open,completed
+    phase_id: <integer>
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 3,
+            "title": "Project",
+            "description": "Description",
+            "status": "open",
+            "board_id": 1,
+            "phase_id": 1,
+            "owner_id": 1,
+            "start_date": "2026-04-15",
+            "end_date": "2026-04-23",
+            "deal_ids": [
+              1
+            ],
+            "person_ids": [
+              1
+            ],
+            "org_ids": [
+              1
+            ],
+            "label_ids": [
+              1
+            ],
+            "health_status": 10,
+            "add_time": "2026-04-14T10:45:20.852Z",
+            "update_time": "2026-04-14T10:45:20.852Z",
+            "status_change_time": "2026-04-14T10:45:20.852Z",
+            "archive_time": null,
+            "custom_fields": {}
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

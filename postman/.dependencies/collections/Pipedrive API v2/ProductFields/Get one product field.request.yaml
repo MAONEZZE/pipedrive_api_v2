@@ -1,0 +1,23 @@
+$kind: http-request
+id: eb59f344-4976-4530-bdfe-dd4e5ddac605
+description: Returns metadata about a specific product field.
+url: "{{baseUrl}}/productFields/:field_code?include_fields=<string>,<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: include_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of additional data namespaces to include in response
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get one product field.resources/examples
+order: 3000

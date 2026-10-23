@@ -1,0 +1,31 @@
+$kind: http-request
+id: 0fb4a238-f726-4cea-a96a-4fbbbf1d2f63
+description: Adds new options to a project custom field that supports options (enum or set field types). This operation is atomic - all options are added or none are added. Returns only the newly added options.
+url: "{{baseUrl}}/projectFields/:field_code/options"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "label": "<string>"
+      },
+      {
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add project field options in bulk.resources/examples
+order: 6000

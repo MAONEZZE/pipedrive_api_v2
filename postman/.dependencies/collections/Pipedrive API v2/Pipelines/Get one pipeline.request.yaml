@@ -1,0 +1,19 @@
+$kind: http-request
+id: 19a4cdf0-860d-4927-8836-6d011d85dd72
+description: Returns data about a specific pipeline.
+url: "{{baseUrl}}/pipelines/:id"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the pipeline
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get one pipeline.resources/examples
+order: 4000

@@ -1,0 +1,27 @@
+$kind: http-request
+id: 0f125259-5b54-45e8-834a-9bdf9bb0afe6
+description: Initiates a conversion of a lead to a deal. The return value is an ID of a job that was assigned to perform the conversion. Related entities (notes, files, emails, activities, ...) are transferred during the process to the target entity. If the conversion is successful, the lead is marked as deleted. To retrieve the created entity ID and the result of the conversion, call the <a href="https://developers.pipedrive.com/docs/api/v1/Leads#getLeadConversionStatus">/api/v2/leads/{lead_id}/convert/status/{conversion_id}</a> endpoint.
+url: "{{baseUrl}}/leads/:id/convert/deal"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <uuid>
+    description: (Required) The ID of the lead to convert
+body:
+  type: json
+  content: |-
+    {
+      "stage_id": "<integer>",
+      "pipeline_id": "<integer>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Convert a lead to a deal.resources/examples
+order: 2000

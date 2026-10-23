@@ -1,0 +1,40 @@
+$kind: http-request
+id: 3436ab4f-f27f-4622-a3de-14711ec52b81
+description: Returns all non-archived projects.
+url: "{{baseUrl}}/projects?filter_id=<integer>&status=<string>&phase_id=<integer>&deal_id=<integer>&person_id=<integer>&org_id=<integer>&limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: filter_id
+    value: <integer>
+    description: If supplied, only projects matching the specified filter are returned
+  - key: status
+    value: <string>
+    description: If supplied, includes only projects with the specified statuses. Possible values are `open`, `completed`, `canceled` and `deleted`. By default `deleted` projects are not returned.
+  - key: phase_id
+    value: <integer>
+    description: If supplied, only projects in the specified phase are returned
+  - key: deal_id
+    value: <integer>
+    description: If supplied, only projects associated with the specified deal are returned
+  - key: person_id
+    value: <integer>
+    description: If supplied, only projects associated with the specified person are returned
+  - key: org_id
+    value: <integer>
+    description: If supplied, only projects associated with the specified organization are returned
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all projects.resources/examples
+order: 1000

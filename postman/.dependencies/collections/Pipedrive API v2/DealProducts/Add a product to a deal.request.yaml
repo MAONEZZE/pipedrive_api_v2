@@ -1,0 +1,38 @@
+$kind: http-request
+id: 04e41e57-b570-4383-8e5d-1be3338cc8c6
+description: Adds a product to a deal, creating a new item called a deal-product.
+url: "{{baseUrl}}/deals/:id/products"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+body:
+  type: json
+  content: |-
+    {
+      "item_price": "<number>",
+      "quantity": "<number>",
+      "product_id": "<integer>",
+      "tax": 0,
+      "comments": "<string>",
+      "discount": 0,
+      "is_enabled": true,
+      "tax_method": "<string>",
+      "discount_type": "percentage",
+      "product_variation_id": "<integer>",
+      "billing_frequency": "one-time",
+      "billing_frequency_cycles": null,
+      "billing_start_date": null
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a product to a deal.resources/examples
+order: 3000

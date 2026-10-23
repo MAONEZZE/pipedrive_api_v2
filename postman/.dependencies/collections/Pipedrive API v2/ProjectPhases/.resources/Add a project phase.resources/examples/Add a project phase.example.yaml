@@ -1,0 +1,39 @@
+$kind: http-example
+id: 2011745e-6911-458e-990c-74b4b60b785c
+request:
+  url: "{{baseUrl}}/phases"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "name": "<string>",
+        "board_id": "<integer>",
+        "order_nr": "<integer>"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "id": 2,
+          "name": "Project Phase",
+          "board_id": 1,
+          "order_nr": 1,
+          "add_time": "2024-01-01T00:00:00.000Z",
+          "update_time": "2024-01-01T00:00:00.000Z"
+        }
+      }
+order: 1000

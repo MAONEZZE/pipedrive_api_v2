@@ -1,0 +1,23 @@
+$kind: http-request
+id: 4a61c760-8d7e-4c40-89c7-0d0026288fc0
+description: Returns metadata about a specific deal field.
+url: "{{baseUrl}}/dealFields/:field_code?include_fields=<string>,<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: include_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of additional data namespaces to include in response
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get one deal field.resources/examples
+order: 3000

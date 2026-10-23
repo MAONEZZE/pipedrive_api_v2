@@ -1,0 +1,34 @@
+$kind: http-request
+id: ea69cc39-4bab-4344-851b-9f9ae43b20c4
+description: |
+  Adds an installment to a deal.
+
+  An installment can only be added if the deal includes at least one one-time product. 
+  If the deal contains at least one recurring product, adding installments is not allowed.
+
+  Only available in Growth and above plans.
+url: "{{baseUrl}}/deals/:id/installments"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+body:
+  type: json
+  content: |-
+    {
+      "description": "<string>",
+      "amount": "<number>",
+      "billing_date": "<string>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add an installment to a deal.resources/examples
+order: 2000

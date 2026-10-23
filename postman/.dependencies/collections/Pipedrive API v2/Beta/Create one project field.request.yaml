@@ -1,0 +1,45 @@
+$kind: http-request
+id: 89ca641a-9aa7-4850-89b1-b1bbcf1fa93c
+description: Creates a new project custom field.
+url: "{{baseUrl}}/projectFields"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "field_type": "<string>",
+      "options": [
+        {
+          "label": "<string>"
+        },
+        {
+          "label": "<string>"
+        }
+      ],
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true
+      },
+      "important_fields": {
+        "enabled": false,
+        "key_0": "string",
+        "key_1": "string",
+        "key_2": true
+      },
+      "required_fields": {
+        "enabled": false,
+        "key_0": "string"
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Create one project field.resources/examples
+order: 2000

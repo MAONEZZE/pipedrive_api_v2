@@ -1,0 +1,31 @@
+$kind: http-request
+id: c18db499-83d4-4af7-b45f-c2351990b70d
+description: Removes existing options from a person custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the deleted options.
+url: "{{baseUrl}}/personFields/:field_code/options"
+method: DELETE
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>"
+      },
+      {
+        "id": "<integer>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete person field options in bulk.resources/examples
+order: 7000

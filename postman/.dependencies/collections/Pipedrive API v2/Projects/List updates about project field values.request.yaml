@@ -1,0 +1,26 @@
+$kind: http-request
+id: 1c70f263-811a-4783-89ea-bfd29841c2f9
+description: Lists updates about field values of a project.
+url: "{{baseUrl}}/projects/:id/changelog?limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/List updates about project field values.resources/examples
+order: 10000

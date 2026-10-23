@@ -1,0 +1,5 @@
+$kind: collection
+id: 0c09489e-e9c3-49dd-ba43-0de6d20d7371
+description: |
+  Leads are potential deals stored in Leads Inbox before they are archived or converted to a deal. Each lead needs to be named (using the `title` field) and be linked to a person or an organization. In addition to that, a lead can contain most of the fields a deal can (such as `value` or `expected_close_date`).
+order: 9000

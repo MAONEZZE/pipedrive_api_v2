@@ -1,0 +1,5 @@
+$kind: collection
+id: 423fb138-e36c-4bbb-8af9-627fa32c7dc1
+description: |
+  Deal fields represent the schema for a deal in the context of the company of the authorized user. Each company can have a different schema for their deals, with various custom fields.
+order: 6000

@@ -1,0 +1,19 @@
+$kind: http-request
+id: a5d6d236-1536-4ab2-a0cb-752889b6b29b
+description: Marks a deal as deleted. After 30 days, the deal will be permanently deleted.
+url: "{{baseUrl}}/deals/:id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a deal.resources/examples
+order: 4000

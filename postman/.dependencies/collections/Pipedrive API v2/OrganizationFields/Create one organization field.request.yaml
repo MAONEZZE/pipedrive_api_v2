@@ -1,0 +1,51 @@
+$kind: http-request
+id: f3f6952d-e6f1-4b89-8a2b-a73d6f1e84d0
+description: Creates a new organization custom field.
+url: "{{baseUrl}}/organizationFields"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "field_type": "<string>",
+      "options": [
+        {
+          "label": "<string>"
+        },
+        {
+          "label": "<string>"
+        }
+      ],
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true,
+        "show_in_add_deal_dialog": {
+          "show": false,
+          "order": null
+        },
+        "show_in_add_person_dialog": {
+          "show": false,
+          "order": null
+        }
+      },
+      "important_fields": {
+        "enabled": false
+      },
+      "required_fields": {
+        "enabled": false,
+        "key_0": "string",
+        "key_1": 960
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Create one organization field.resources/examples
+order: 2000

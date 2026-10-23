@@ -1,0 +1,51 @@
+$kind: http-request
+id: b7685820-35de-4236-b434-e39243dcfe3a
+description: Adds a new project. Custom fields should be wrapped in the `custom_fields` object.
+url: "{{baseUrl}}/projects"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "<string>",
+      "description": "<string>",
+      "status": "<string>",
+      "board_id": "<integer>",
+      "phase_id": "<integer>",
+      "owner_id": "<integer>",
+      "start_date": "<date>",
+      "end_date": "<date>",
+      "deal_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "person_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "org_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "label_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "health_status": "<integer>",
+      "template_id": "<integer>",
+      "custom_fields": {
+        "key_0": 2978,
+        "key_1": 6231
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a project.resources/examples
+order: 2000

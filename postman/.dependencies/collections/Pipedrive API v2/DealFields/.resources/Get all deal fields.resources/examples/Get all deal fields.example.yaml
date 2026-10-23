@@ -1,0 +1,164 @@
+$kind: http-example
+id: 6b5490e8-31e8-4f2f-b40f-eb6127b2eb34
+request:
+  url: "{{baseUrl}}/dealFields?include_fields=<string>&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    include_fields: <string>
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "field_name": "Deal Title",
+            "field_code": "title",
+            "description": "The title or name of the deal",
+            "field_type": "varchar",
+            "options": null,
+            "subfields": null,
+            "is_custom_field": false,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true,
+              "projects_detail_visible_flag": true,
+              "show_in_pipelines": {
+                "show_in_all": true,
+                "pipeline_ids": []
+              }
+            },
+            "important_fields": {
+              "enabled": false,
+              "stage_ids": []
+            },
+            "required_fields": {
+              "enabled": false,
+              "stage_ids": [],
+              "statuses": {}
+            }
+          },
+          {
+            "field_name": "Value",
+            "field_code": "value",
+            "description": "The monetary value of the deal",
+            "field_type": "monetary",
+            "options": null,
+            "subfields": [
+              {
+                "field_code": "value",
+                "field_name": "Amount of Value",
+                "field_type": "double"
+              },
+              {
+                "field_code": "currency",
+                "field_name": "Currency of Value",
+                "field_type": "varchar"
+              }
+            ],
+            "is_custom_field": false,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true,
+              "projects_detail_visible_flag": true,
+              "show_in_pipelines": {
+                "show_in_all": true,
+                "pipeline_ids": []
+              }
+            },
+            "important_fields": {
+              "enabled": true,
+              "stage_ids": [
+                1,
+                2,
+                3
+              ]
+            },
+            "required_fields": {
+              "enabled": false,
+              "stage_ids": [],
+              "statuses": {}
+            }
+          },
+          {
+            "field_name": "Priority",
+            "field_code": "40characterhashforcustomfieldidentifier",
+            "description": "Priority level for the deal",
+            "field_type": "enum",
+            "options": [
+              {
+                "id": 1,
+                "label": "Low",
+                "color": "green"
+              },
+              {
+                "id": 2,
+                "label": "Medium",
+                "color": "yellow"
+              },
+              {
+                "id": 3,
+                "label": "High",
+                "color": "red"
+              }
+            ],
+            "subfields": null,
+            "is_custom_field": true,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true,
+              "projects_detail_visible_flag": false,
+              "show_in_pipelines": {
+                "show_in_all": false,
+                "pipeline_ids": [
+                  1,
+                  2
+                ]
+              }
+            },
+            "important_fields": {
+              "enabled": true,
+              "stage_ids": [
+                5,
+                6
+              ]
+            },
+            "required_fields": {
+              "enabled": true,
+              "stage_ids": [
+                5,
+                6
+              ],
+              "statuses": {
+                "1": [
+                  "won",
+                  "lost"
+                ],
+                "2": [
+                  "won"
+                ]
+              }
+            }
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

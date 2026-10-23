@@ -1,0 +1,35 @@
+$kind: http-request
+id: 54723f24-517c-4e70-8f8c-91cfd08c5c80
+description: Creates a new product custom field.
+url: "{{baseUrl}}/productFields"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "field_type": "<string>",
+      "options": [
+        {
+          "label": "<string>"
+        },
+        {
+          "label": "<string>"
+        }
+      ],
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Create one product field.resources/examples
+order: 2000

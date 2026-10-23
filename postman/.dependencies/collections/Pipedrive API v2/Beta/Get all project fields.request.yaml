@@ -1,0 +1,22 @@
+$kind: http-request
+id: 41803bae-ec05-4fea-a3dc-c59b1d3d9b87
+description: Returns metadata about all project fields in the company.
+url: "{{baseUrl}}/projectFields?limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all project fields.resources/examples
+order: 1000

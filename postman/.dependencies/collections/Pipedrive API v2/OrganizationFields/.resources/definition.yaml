@@ -1,0 +1,5 @@
+$kind: collection
+id: 86501c90-fa9a-4bbc-bdde-dbc2bf898eb0
+description: |
+  Organization fields represent the schema for an organization in the context of the company of the authorized user. Each company can have a different schema for their organizations, with various custom fields.
+order: 11000

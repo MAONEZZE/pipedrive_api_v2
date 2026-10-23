@@ -1,0 +1,45 @@
+$kind: http-example
+id: cd7268f1-915b-4393-b4f9-759473b10606
+request:
+  url: "{{baseUrl}}/deals/installments?deal_ids=<integer>&deal_ids=<integer>&cursor=<string>&limit=100&sort_by=id&sort_direction=asc"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    - key: deal_ids
+      value: <integer>
+    - key: deal_ids
+      value: <integer>
+    - key: cursor
+      value: <string>
+    - key: limit
+      value: "100"
+    - key: sort_by
+      value: id
+    - key: sort_direction
+      value: asc
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 1,
+            "amount": 10,
+            "billing_date": "2025-03-10",
+            "deal_id": 1,
+            "description": "Delivery Fee"
+          }
+        ]
+      }
+order: 1000

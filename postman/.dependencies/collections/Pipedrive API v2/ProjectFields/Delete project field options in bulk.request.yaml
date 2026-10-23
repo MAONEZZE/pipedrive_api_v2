@@ -1,0 +1,31 @@
+$kind: http-request
+id: a5d71409-7356-422d-a08b-7c2d998bee4c
+description: Removes existing options from a project custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the deleted options.
+url: "{{baseUrl}}/projectFields/:field_code/options"
+method: DELETE
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>"
+      },
+      {
+        "id": "<integer>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete project field options in bulk.resources/examples
+order: 7000

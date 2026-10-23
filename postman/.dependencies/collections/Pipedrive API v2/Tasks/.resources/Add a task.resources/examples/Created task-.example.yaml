@@ -1,0 +1,64 @@
+$kind: http-example
+id: 7d9c173e-1b25-4aef-98cd-7994f620a78a
+name: Created task.
+request:
+  url: "{{baseUrl}}/tasks"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "title": "<string>",
+        "project_id": "<integer>",
+        "parent_task_id": "<integer>",
+        "description": "<string>",
+        "done": "<integer>",
+        "milestone": "<integer>",
+        "due_date": "<date>",
+        "start_date": "<date>",
+        "assignee_id": "<integer>",
+        "assignee_ids": [
+          "<integer>",
+          "<integer>"
+        ],
+        "priority": "<integer>"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "id": 1,
+          "title": "Task 1",
+          "creator_id": 2,
+          "description": "Task description",
+          "project_id": 1,
+          "is_done": false,
+          "is_milestone": false,
+          "due_date": "2026-10-11",
+          "start_date": "2026-09-01",
+          "parent_task_id": null,
+          "assignee_ids": [
+            2,
+            3
+          ],
+          "priority": null,
+          "add_time": "2026-09-14T08:14:40.000Z",
+          "update_time": "2026-09-14T08:14:40.000Z",
+          "marked_as_done_time": null
+        },
+        "additional_data": null
+      }
+order: 1000

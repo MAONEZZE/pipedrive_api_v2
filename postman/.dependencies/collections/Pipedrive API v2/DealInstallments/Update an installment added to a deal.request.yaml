@@ -1,0 +1,34 @@
+$kind: http-request
+id: 24d27c65-dd32-4522-ae61-8ea1634c0168
+description: |
+  Edits an installment added to a deal.
+
+  Only available in Growth and above plans.
+url: "{{baseUrl}}/deals/:id/installments/:installment_id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+  - key: installment_id
+    value: <integer>
+    description: (Required) The ID of the installment
+body:
+  type: json
+  content: |-
+    {
+      "description": "<string>",
+      "amount": "<number>",
+      "billing_date": "<string>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update an installment added to a deal.resources/examples
+order: 3000

@@ -1,0 +1,40 @@
+$kind: http-request
+id: f9c3d8ae-6499-4452-a2ae-29f3eb66b2a2
+description: Searches all leads by title, notes and/or custom fields. This endpoint is a wrapper of <a href="https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem">/v1/itemSearch</a> with a narrower OAuth scope. Found leads can be filtered by the person ID and the organization ID.
+url: "{{baseUrl}}/leads/search?term=<string>&fields=<string>,<string>&exact_match=<boolean>&person_id=<integer>&organization_id=<integer>&include_fields=<string>,<string>&limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: term
+    value: <string>
+    description: (Required) The search term to look for. Minimum 2 characters (or 1 if using `exact_match`). Please note that the search term has to be URL encoded.
+  - key: fields
+    value: <string>,<string>
+    description: A comma-separated string array. The fields to perform the search from. Defaults to all of them.
+  - key: exact_match
+    value: <boolean>
+    description: When enabled, only full exact matches against the given term are returned. It is <b>not</b> case sensitive.
+  - key: person_id
+    value: <integer>
+    description: Will filter leads by the provided person ID. The upper limit of found leads associated with the person is 2000.
+  - key: organization_id
+    value: <integer>
+    description: Will filter leads by the provided organization ID. The upper limit of found leads associated with the organization is 2000.
+  - key: include_fields
+    value: <string>,<string>
+    description: Supports including optional fields in the results which are not provided by default
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 100 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Search leads.resources/examples
+order: 1000

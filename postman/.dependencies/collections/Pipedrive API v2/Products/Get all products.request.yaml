@@ -1,0 +1,43 @@
+$kind: http-request
+id: 06af6c0b-8567-4c61-8fff-1835092db9ef
+description: Returns data about all products.
+url: "{{baseUrl}}/products?owner_id=<integer>&ids=<integer>,<integer>&custom_fields=<string>,<string>&filter_id=<integer>&cursor=<string>&limit=<integer>&sort_by=id&sort_direction=asc&updated_since=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: owner_id
+    value: <integer>
+    description: If supplied, only products owned by the given user will be returned
+  - key: ids
+    value: <integer>,<integer>
+    description: Optional comma separated array of up to 100 entity ids to fetch. If filter_id is provided, this is ignored. If any of the requested entities do not exist or are not visible, they are not included in the response.
+  - key: custom_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of custom fields keys to include. If you are only interested in a particular set of custom fields, please use this parameter for faster results and smaller response.<br/>A maximum of 15 keys is allowed.
+  - key: filter_id
+    value: <integer>
+    description: The ID of the filter to use
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: sort_by
+    value: id
+    description: "The field to sort by. Supported fields: `id`, `name`, `add_time`, `update_time`."
+  - key: sort_direction
+    value: asc
+    description: "The sorting direction. Supported values: `asc`, `desc`."
+  - key: updated_since
+    value: <string>
+    description: If set, only products with an `update_time` later than or equal to this time are returned. In RFC3339 format, e.g. 2025-01-01T10:20:00Z.
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all products.resources/examples
+order: 1000

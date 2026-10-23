@@ -1,0 +1,19 @@
+$kind: http-request
+id: ebdf4a1e-ddaf-4c79-aaae-05300db2a1ac
+description: Marks a project board as deleted.
+url: "{{baseUrl}}/boards/:id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project board
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a project board.resources/examples
+order: 19000

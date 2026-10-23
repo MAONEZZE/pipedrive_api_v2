@@ -1,0 +1,43 @@
+$kind: http-example
+id: ea50161e-17f5-4116-a710-c20f451e7b6b
+request:
+  url: "{{baseUrl}}/itemSearch/field?term=<string>&entity_type=<string>&match=exact&field=<string>&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    term: <string>
+    entity_type: <string>
+    match: exact
+    field: <string>
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 1,
+            "name": "Jane Doe"
+          },
+          {
+            "id": 2,
+            "name": "John Doe"
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

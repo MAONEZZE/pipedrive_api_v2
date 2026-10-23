@@ -1,0 +1,5 @@
+$kind: collection
+id: 19febded-040a-4ffe-8e76-106d3dfeeda2
+description: |
+  Project templates are reusable blueprints for creating projects with predefined structure and settings.
+order: 21000

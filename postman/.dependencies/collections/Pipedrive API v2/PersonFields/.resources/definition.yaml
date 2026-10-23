@@ -1,0 +1,5 @@
+$kind: collection
+id: 86445d39-d1c6-4683-b04d-9834f2df14a3
+description: |
+  Person fields represent the schema for a person in the context of the company of the authorized user. Each company can have a different schema for their persons, with various custom fields.
+order: 13000

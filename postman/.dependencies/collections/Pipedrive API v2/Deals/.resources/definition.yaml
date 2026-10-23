@@ -1,0 +1,5 @@
+$kind: collection
+id: dbf042e5-ee7f-48bc-907d-f093553dee20
+description: |
+  Deals represent ongoing, lost or won sales to an organization or to a person. Each deal has a monetary value and must be placed in a stage. Deals can be owned by a user, and followed by one or many users. Each deal consists of standard data fields but can also contain a number of custom fields. The custom fields can be recognized by long hashes as keys. These hashes can be mapped against `DealField.key`. The corresponding label for each such custom field can be obtained from `DealField.name`.
+order: 3000

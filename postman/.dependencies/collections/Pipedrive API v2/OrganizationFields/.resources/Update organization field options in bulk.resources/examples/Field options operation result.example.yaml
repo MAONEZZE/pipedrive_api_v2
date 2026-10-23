@@ -1,0 +1,47 @@
+$kind: http-example
+id: e4cf0c6c-de7e-4d10-a1b8-4e5779d3880a
+request:
+  url: "{{baseUrl}}/organizationFields/:field_code/options"
+  method: PATCH
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  pathVariables:
+    - key: field_code
+      value: <string>
+      description: (Required) The unique code identifying the field
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "id": "<integer>",
+          "label": "<string>"
+        },
+        {
+          "id": "<integer>",
+          "label": "<string>"
+        }
+      ]
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 4,
+            "label": "Manufacturing"
+          }
+        ],
+        "additional_data": null
+      }
+order: 1000

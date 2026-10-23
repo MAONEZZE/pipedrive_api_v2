@@ -1,0 +1,27 @@
+$kind: http-request
+id: 7b51afcb-0aef-4823-b542-5015c398c24f
+description: Uploads an image for a product.
+url: "{{baseUrl}}/products/:id/images"
+method: POST
+headers:
+  Content-Type: multipart/form-data
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the product
+body:
+  type: formdata
+  content:
+    - type: file
+      key: data
+      src: []
+      description: (Required) One image supplied in the multipart/form-data encoding
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Upload an image for a product.resources/examples
+order: 17000

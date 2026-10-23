@@ -1,0 +1,25 @@
+$kind: http-request
+id: ad4822d7-f5e7-4b6b-8eab-e3b4dffea5bb
+description: Returns metadata about all product fields in the company.
+url: "{{baseUrl}}/productFields?include_fields=<string>,<string>&limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: include_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of additional data namespaces to include in response
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all product fields.resources/examples
+order: 1000

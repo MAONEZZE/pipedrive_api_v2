@@ -1,0 +1,28 @@
+$kind: http-request
+id: 0307f109-7f12-4ad4-b12d-71c676fd6815
+description: Returns data about all pipelines.
+url: "{{baseUrl}}/pipelines?sort_by=id&sort_direction=asc&limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: sort_by
+    value: id
+    description: "The field to sort by. Supported fields: `id`, `update_time`, `add_time`."
+  - key: sort_direction
+    value: asc
+    description: "The sorting direction. Supported values: `asc`, `desc`."
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all pipelines.resources/examples
+order: 1000

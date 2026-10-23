@@ -1,0 +1,5 @@
+$kind: collection
+id: 06fdefe5-1c3f-4cd0-96d2-7f6e9deb573b
+description: |
+  Deal installments are scheduled payment entries attached to a deal, enabling split payment arrangements.
+order: 5000

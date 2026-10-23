@@ -1,0 +1,39 @@
+$kind: http-request
+id: b38952dc-73d7-4781-b593-762420b16847
+description: Updates a project custom field. The field_code and field_type cannot be changed. At least one field must be provided in the request body.
+url: "{{baseUrl}}/projectFields/:field_code"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true
+      },
+      "important_fields": {
+        "enabled": false,
+        "key_0": true
+      },
+      "required_fields": {
+        "enabled": false,
+        "key_0": 4267,
+        "key_1": 4255
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update one project field.resources/examples
+order: 4000

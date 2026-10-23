@@ -1,0 +1,24 @@
+$kind: http-request
+id: 0f7a2aad-5b07-4a5f-b01f-9fa78d752c18
+description: Adds a new project phase to a board.
+url: "{{baseUrl}}/phases"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "board_id": "<integer>",
+      "order_nr": "<integer>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a project phase.resources/examples
+order: 21000

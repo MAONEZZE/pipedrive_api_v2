@@ -1,0 +1,19 @@
+$kind: http-request
+id: f7c7887d-443f-44b3-bb1d-656b192c9feb
+description: Marks a custom field as deleted.
+url: "{{baseUrl}}/organizationFields/:field_code"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete one organization field.resources/examples
+order: 5000

@@ -1,0 +1,22 @@
+$kind: http-request
+id: 64c0ea60-23fa-44ad-8287-12c60b92a96c
+description: Returns information about the conversion. Status is always present and its value (not_started, running, completed, failed, rejected) represents the current state of the conversion. Lead ID is only present if the conversion was successfully finished. This data is only temporary and removed after a few days.
+url: "{{baseUrl}}/deals/:id/convert/status/:conversion_id"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of a deal
+  - key: conversion_id
+    value: <uuid>
+    description: (Required) The ID of the conversion
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get Deal conversion status.resources/examples
+order: 17000

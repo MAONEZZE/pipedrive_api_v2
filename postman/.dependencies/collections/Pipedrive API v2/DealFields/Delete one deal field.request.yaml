@@ -1,0 +1,19 @@
+$kind: http-request
+id: 3ca92270-05cd-4ab2-b38c-52b6424e2130
+description: Marks a custom field as deleted.
+url: "{{baseUrl}}/dealFields/:field_code"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete one deal field.resources/examples
+order: 5000

@@ -1,0 +1,61 @@
+$kind: http-request
+id: 5dc9c39d-56c5-4096-9c5a-06e7e0fe64e6
+description: Returns data about all persons. Fields `ims`, `postal_address`, `notes`, `birthday`, and `job_title` are only included if contact sync is enabled for the company.
+url: "{{baseUrl}}/persons?filter_id=<integer>&ids=<integer>,<integer>&owner_id=<integer>&org_id=<integer>&deal_id=<integer>&updated_since=<string>&updated_until=<string>&sort_by=id&sort_direction=asc&include_fields=<string>,<string>&custom_fields=<string>,<string>&include_option_labels=<boolean>&include_labels=<boolean>&limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: filter_id
+    value: <integer>
+    description: If supplied, only persons matching the specified filter are returned
+  - key: ids
+    value: <integer>,<integer>
+    description: Optional comma separated array of up to 100 entity ids to fetch. If filter_id is provided, this is ignored. If any of the requested entities do not exist or are not visible, they are not included in the response.
+  - key: owner_id
+    value: <integer>
+    description: If supplied, only persons owned by the specified user are returned. If filter_id is provided, this is ignored.
+  - key: org_id
+    value: <integer>
+    description: If supplied, only persons linked to the specified organization are returned. If filter_id is provided, this is ignored.
+  - key: deal_id
+    value: <integer>
+    description: If supplied, only persons linked to the specified deal are returned. If filter_id is provided, this is ignored.
+  - key: updated_since
+    value: <string>
+    description: If set, only persons with an `update_time` later than or equal to this time are returned. In RFC3339 format, e.g. 2025-01-01T10:20:00Z.
+  - key: updated_until
+    value: <string>
+    description: If set, only persons with an `update_time` earlier than this time are returned. In RFC3339 format, e.g. 2025-01-01T10:20:00Z.
+  - key: sort_by
+    value: id
+    description: "The field to sort by. Supported fields: `id`, `update_time`, `add_time`."
+  - key: sort_direction
+    value: asc
+    description: "The sorting direction. Supported values: `asc`, `desc`."
+  - key: include_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of additional fields to include. `marketing_status` and `doi_status` can only be included if the company has marketing app enabled.
+  - key: custom_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of custom fields keys to include. If you are only interested in a particular set of custom fields, please use this parameter for faster results and smaller response.<br/>A maximum of 15 keys is allowed.
+  - key: include_option_labels
+    value: <boolean>
+    description: "When provided with a 'true' value, single option and multiple option custom fields values contain objects in the form of '{ id: number, label: string }' instead of plain id"
+  - key: include_labels
+    value: <boolean>
+    description: "When provided with 'true' value, response will include an array of label objects in the form of '{ id: number, label: string }'"
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all persons.resources/examples
+order: 1000

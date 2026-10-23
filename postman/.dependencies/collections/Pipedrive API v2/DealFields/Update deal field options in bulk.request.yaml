@@ -1,0 +1,33 @@
+$kind: http-request
+id: 98f6f1a2-6eee-4593-9d08-ff3d837ccbb8
+description: Updates existing options for a deal custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the updated options.
+url: "{{baseUrl}}/dealFields/:field_code/options"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      },
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update deal field options in bulk.resources/examples
+order: 8000

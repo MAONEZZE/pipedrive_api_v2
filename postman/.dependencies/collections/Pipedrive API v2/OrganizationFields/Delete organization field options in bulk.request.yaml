@@ -1,0 +1,31 @@
+$kind: http-request
+id: 6672d931-c48b-41ee-9baf-d4e33b9e8946
+description: Removes existing options from an organization custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the deleted options.
+url: "{{baseUrl}}/organizationFields/:field_code/options"
+method: DELETE
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>"
+      },
+      {
+        "id": "<integer>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete organization field options in bulk.resources/examples
+order: 7000

@@ -1,0 +1,15 @@
+$kind: http-request
+id: 103729ea-0ace-454d-801c-649ac15d765b
+description: Returns all active project boards.
+url: "{{baseUrl}}/boards"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all project boards.resources/examples
+order: 15000

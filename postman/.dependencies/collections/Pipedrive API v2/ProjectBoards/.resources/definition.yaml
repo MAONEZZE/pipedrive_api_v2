@@ -1,0 +1,5 @@
+$kind: collection
+id: 33267674-d4b4-43e6-9b67-b115e00a75b9
+description: |
+  Project boards are the top-level containers for organizing projects into phases. Each board contains one or more phases that define the workflow stages for projects.
+order: 19000

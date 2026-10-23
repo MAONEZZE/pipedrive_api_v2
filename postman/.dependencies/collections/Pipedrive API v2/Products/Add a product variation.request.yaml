@@ -1,0 +1,30 @@
+$kind: http-request
+id: 00115b45-ca22-4016-8a07-5ef7dbd997ea
+description: Adds a new product variation.
+url: "{{baseUrl}}/products/:id/variations"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the product
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "prices": [
+        "<object>",
+        "<object>"
+      ]
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a product variation.resources/examples
+order: 13000

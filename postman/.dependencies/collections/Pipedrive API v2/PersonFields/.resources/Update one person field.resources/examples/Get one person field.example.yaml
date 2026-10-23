@@ -1,0 +1,74 @@
+$kind: http-example
+id: 45ba36aa-175a-4eb1-84f7-138323867ae7
+request:
+  url: "{{baseUrl}}/personFields/:field_code"
+  method: PATCH
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  pathVariables:
+    - key: field_code
+      value: <string>
+      description: (Required) The unique code identifying the field
+  body:
+    type: json
+    content: |-
+      {
+        "field_name": "<string>",
+        "ui_visibility": {
+          "add_visible_flag": false,
+          "details_visible_flag": true,
+          "show_in_add_deal_dialog": {
+            "show": false,
+            "order": null
+          },
+          "key_0": "string"
+        },
+        "important_fields": {
+          "enabled": false
+        },
+        "required_fields": {
+          "enabled": false,
+          "key_0": 5705.292869428334
+        }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Person Name",
+          "field_code": "name",
+          "description": "The name of the person",
+          "field_type": "varchar",
+          "options": null,
+          "subfields": null,
+          "is_custom_field": false,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true,
+            "show_in_add_deal_dialog": {
+              "show": true,
+              "order": 1
+            }
+          },
+          "important_fields": {
+            "enabled": false,
+            "stage_ids": []
+          },
+          "required_fields": {
+            "enabled": true
+          }
+        }
+      }
+order: 1000

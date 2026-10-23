@@ -1,0 +1,5 @@
+$kind: collection
+id: 0c18d4b5-cf48-4f2d-9de4-8a5e6a4ec7e4
+description: |
+  Activity fields represent different fields that an activity has.
+order: 2000

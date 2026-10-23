@@ -1,0 +1,19 @@
+$kind: http-request
+id: d943a7ac-0f00-4853-8af4-fee1d80f0201
+description: Returns the details of a specific project template.
+url: "{{baseUrl}}/projectTemplates/:id"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project template
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get details of a template.resources/examples
+order: 2000

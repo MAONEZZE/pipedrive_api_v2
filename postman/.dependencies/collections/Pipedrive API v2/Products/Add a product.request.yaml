@@ -1,0 +1,53 @@
+$kind: http-request
+id: 18ba402e-5bfa-4d70-b35e-75e481309acc
+description: Adds a new product to the Products inventory. For more information, see the tutorial for <a href="https://pipedrive.readme.io/docs/adding-a-product" target="_blank" rel="noopener noreferrer">adding a product</a>.
+url: "{{baseUrl}}/products"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "code": "<string>",
+      "description": "<string>",
+      "unit": "<string>",
+      "tax": 0,
+      "category": "<number>",
+      "owner_id": "<integer>",
+      "is_linkable": true,
+      "visible_to": "<number>",
+      "prices": [
+        {
+          "price": "<number>",
+          "currency": "<string>",
+          "cost": "<number>",
+          "direct_cost": "<number>",
+          "notes": "<string>"
+        },
+        {
+          "price": "<number>",
+          "currency": "<string>",
+          "cost": "<number>",
+          "direct_cost": "<number>",
+          "notes": "<string>"
+        }
+      ],
+      "custom_fields": {
+        "key_0": 4336.052310679545,
+        "key_1": "string",
+        "key_2": 4319
+      },
+      "billing_frequency": "one-time",
+      "billing_frequency_cycles": null
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a product.resources/examples
+order: 2000

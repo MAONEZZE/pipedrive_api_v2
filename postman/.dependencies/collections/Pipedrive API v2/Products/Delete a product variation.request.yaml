@@ -1,0 +1,22 @@
+$kind: http-request
+id: 7f414be7-e302-42a8-a5ac-4cf28d89735f
+description: Deletes a product variation.
+url: "{{baseUrl}}/products/:id/variations/:product_variation_id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the product
+  - key: product_variation_id
+    value: <integer>
+    description: (Required) The ID of the product variation
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a product variation.resources/examples
+order: 15000

@@ -1,0 +1,37 @@
+$kind: http-request
+id: 289e960f-befd-4e31-9b13-daa1cb10243d
+description: |
+  Lists installments attached to a list of deals.
+
+  Only available in Growth and above plans.
+url: "{{baseUrl}}/deals/installments?deal_ids=<integer>&deal_ids=<integer>&cursor=<string>&limit=<integer>&sort_by=id&sort_direction=asc"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: deal_ids
+    value: <integer>
+    description: (Required) An array of integers with the IDs of the deals for which the attached installments will be returned. A maximum of 100 deal IDs can be provided.
+  - key: deal_ids
+    value: <integer>
+    description: (Required) An array of integers with the IDs of the deals for which the attached installments will be returned. A maximum of 100 deal IDs can be provided.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: sort_by
+    value: id
+    description: "The field to sort by. Supported fields: `id`, `billing_date`, `deal_id`."
+  - key: sort_direction
+    value: asc
+    description: "The sorting direction. Supported values: `asc`, `desc`."
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/List installments added to a list of deals.resources/examples
+order: 1000

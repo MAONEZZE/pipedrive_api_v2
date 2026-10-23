@@ -1,0 +1,31 @@
+$kind: http-request
+id: c757f048-42ea-4713-bff3-695fd6b98fe0
+description: Adds new options to an organization custom field that supports options (enum or set field types). This operation is atomic - all options are added or none are added. Returns only the newly added options.
+url: "{{baseUrl}}/organizationFields/:field_code/options"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "label": "<string>"
+      },
+      {
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add organization field options in bulk.resources/examples
+order: 6000

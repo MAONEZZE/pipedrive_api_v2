@@ -1,0 +1,45 @@
+$kind: http-example
+id: 76a91171-2d7d-42cb-9fea-4367e166ec67
+request:
+  url: "{{baseUrl}}/projectFields/:field_code/options"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  pathVariables:
+    - key: field_code
+      value: <string>
+      description: (Required) The unique code identifying the field
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "label": "<string>"
+        },
+        {
+          "label": "<string>"
+        }
+      ]
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 4,
+            "label": "Research & Development"
+          }
+        ],
+        "additional_data": null
+      }
+order: 1000

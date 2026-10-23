@@ -1,0 +1,46 @@
+$kind: http-request
+id: c97a1790-f8d2-4ca8-995b-8f7b3cd6d312
+description: Updates a person custom field. The field_code and field_type cannot be changed. At least one field must be provided in the request body.
+url: "{{baseUrl}}/personFields/:field_code"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true,
+        "show_in_add_deal_dialog": {
+          "show": false,
+          "order": null
+        },
+        "key_0": 6350,
+        "key_1": 8483
+      },
+      "important_fields": {
+        "enabled": false,
+        "key_0": 4641,
+        "key_1": 3248,
+        "key_2": false
+      },
+      "required_fields": {
+        "enabled": false,
+        "key_0": "string"
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update one person field.resources/examples
+order: 4000

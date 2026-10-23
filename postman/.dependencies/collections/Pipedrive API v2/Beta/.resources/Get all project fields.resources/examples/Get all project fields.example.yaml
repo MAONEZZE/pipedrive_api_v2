@@ -1,0 +1,84 @@
+$kind: http-example
+id: 35c22dea-c1fe-4b83-a5ab-3502a5ef167c
+request:
+  url: "{{baseUrl}}/projectFields?limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "field_name": "Project Name",
+            "field_code": "name",
+            "field_type": "varchar",
+            "options": null,
+            "subfields": null,
+            "is_custom_field": false,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true
+            },
+            "important_fields": {
+              "enabled": false,
+              "stage_ids": []
+            },
+            "required_fields": {
+              "enabled": true
+            }
+          },
+          {
+            "field_name": "Category",
+            "field_code": "40characterhashforcustomfieldidentifier",
+            "field_type": "enum",
+            "options": [
+              {
+                "id": 1,
+                "label": "Internal"
+              },
+              {
+                "id": 2,
+                "label": "External"
+              },
+              {
+                "id": 3,
+                "label": "Research"
+              }
+            ],
+            "subfields": null,
+            "is_custom_field": true,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true
+            },
+            "important_fields": {
+              "enabled": false,
+              "stage_ids": []
+            },
+            "required_fields": {
+              "enabled": false
+            }
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

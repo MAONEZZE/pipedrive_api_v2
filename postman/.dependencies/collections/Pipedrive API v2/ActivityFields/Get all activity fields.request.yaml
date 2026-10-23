@@ -1,0 +1,25 @@
+$kind: http-request
+id: 5a8a3aff-d2e7-4a5a-bb71-ae0223be1e79
+description: Returns metadata about all activity fields in the company.
+url: "{{baseUrl}}/activityFields?include_fields=<string>,<string>&limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: include_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of additional data namespaces to include in response
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all activity fields.resources/examples
+order: 1000

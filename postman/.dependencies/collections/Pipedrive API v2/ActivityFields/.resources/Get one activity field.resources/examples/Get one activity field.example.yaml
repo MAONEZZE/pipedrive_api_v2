@@ -1,0 +1,43 @@
+$kind: http-example
+id: 85a0bfd4-71cb-42ec-adb9-47cf16db5edb
+request:
+  url: "{{baseUrl}}/activityFields/:field_code?include_fields=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    include_fields: <string>
+  pathVariables:
+    - key: field_code
+      value: <string>
+      description: (Required) The unique code identifying the field
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Subject",
+          "field_code": "subject",
+          "description": "The subject or title of the activity",
+          "field_type": "varchar",
+          "options": null,
+          "subfields": null,
+          "is_custom_field": false,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true
+          }
+        }
+      }
+order: 1000

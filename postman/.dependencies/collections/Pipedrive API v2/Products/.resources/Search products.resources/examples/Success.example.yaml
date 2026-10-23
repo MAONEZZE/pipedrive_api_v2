@@ -1,0 +1,51 @@
+$kind: http-example
+id: a75f11fb-c9b0-4dd4-a5cf-6f6491400dbe
+request:
+  url: "{{baseUrl}}/products/search?term=<string>&fields=<string>&exact_match=<boolean>&include_fields=<string>&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    term: <string>
+    fields: <string>
+    exact_match: <boolean>
+    include_fields: <string>
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "items": [
+            {
+              "result_score": 0.8766,
+              "item": {
+                "id": 1,
+                "type": "product",
+                "name": "Some product",
+                "code": "123",
+                "visible_to": 3,
+                "owner": {
+                  "id": 1
+                },
+                "custom_fields": []
+              }
+            }
+          ]
+        },
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

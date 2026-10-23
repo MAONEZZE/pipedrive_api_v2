@@ -1,0 +1,52 @@
+$kind: http-request
+id: b52f621e-e12a-4dbb-8451-c73233b702ac
+description: Creates a new person custom field.
+url: "{{baseUrl}}/personFields"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "field_type": "<string>",
+      "options": [
+        {
+          "label": "<string>"
+        },
+        {
+          "label": "<string>"
+        }
+      ],
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true,
+        "show_in_add_deal_dialog": {
+          "show": false,
+          "order": null
+        },
+        "key_0": "string",
+        "key_1": "string",
+        "key_2": true
+      },
+      "important_fields": {
+        "enabled": false
+      },
+      "required_fields": {
+        "enabled": false,
+        "key_0": 7424,
+        "key_1": "string",
+        "key_2": "string",
+        "key_3": 7586.693353901724
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Create one person field.resources/examples
+order: 2000

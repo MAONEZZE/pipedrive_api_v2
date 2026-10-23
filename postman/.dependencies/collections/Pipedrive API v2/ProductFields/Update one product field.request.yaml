@@ -1,0 +1,33 @@
+$kind: http-request
+id: fecc3383-12db-41e4-80a8-03076913826a
+description: Updates a product custom field. The field_code and field_type cannot be changed. At least one field must be provided in the request body.
+url: "{{baseUrl}}/productFields/:field_code"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true,
+        "key_0": 5841.538576523726,
+        "key_1": 7490.040514116118,
+        "key_2": false
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update one product field.resources/examples
+order: 4000

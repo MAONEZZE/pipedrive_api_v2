@@ -1,0 +1,22 @@
+$kind: http-request
+id: 85d4db97-6bdd-4d13-957e-44ec26ff62f4
+description: Deletes a user follower from the product.
+url: "{{baseUrl}}/products/:id/followers/:follower_id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the product
+  - key: follower_id
+    value: <integer>
+    description: (Required) The ID of the following user
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a follower from a product.resources/examples
+order: 6000

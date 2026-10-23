@@ -1,0 +1,19 @@
+$kind: http-request
+id: cd8ffdfd-43a0-4d4b-b422-87a87c20a7b7
+description: Deletes the image of a product.
+url: "{{baseUrl}}/products/:id/images"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the product
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete an image of a product.resources/examples
+order: 19000

@@ -1,0 +1,27 @@
+$kind: http-request
+id: 131c4cef-ff9c-452f-9793-41e5b7cb448d
+description: Updates the properties of a pipeline.
+url: "{{baseUrl}}/pipelines/:id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the pipeline
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "is_deal_probability_enabled": false
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update a pipeline.resources/examples
+order: 5000

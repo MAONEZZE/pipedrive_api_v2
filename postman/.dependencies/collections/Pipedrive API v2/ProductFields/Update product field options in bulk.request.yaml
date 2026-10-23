@@ -1,0 +1,33 @@
+$kind: http-request
+id: 69798842-b004-4654-9c37-c6f6e0806a08
+description: Updates existing options for a product custom field. This operation is atomic and fails if any of the specified option IDs do not exist. Returns only the updated options.
+url: "{{baseUrl}}/productFields/:field_code/options"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      },
+      {
+        "id": "<integer>",
+        "label": "<string>"
+      }
+    ]
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update product field options in bulk.resources/examples
+order: 8000

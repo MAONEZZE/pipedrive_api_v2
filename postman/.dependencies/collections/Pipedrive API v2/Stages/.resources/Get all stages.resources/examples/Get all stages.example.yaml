@@ -1,0 +1,46 @@
+$kind: http-example
+id: e156b52a-2270-419c-8f83-59901caaed4c
+request:
+  url: "{{baseUrl}}/stages?pipeline_id=<integer>&sort_by=id&sort_direction=asc&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    pipeline_id: <integer>
+    sort_by: id
+    sort_direction: asc
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "id": 1,
+            "order_nr": 1,
+            "name": "Stage Name",
+            "is_deleted": false,
+            "deal_probability": 100,
+            "pipeline_id": 1,
+            "is_deal_rot_enabled": true,
+            "days_to_rotten": 2,
+            "add_time": "2024-01-01T00:00:00Z",
+            "update_time": "2024-01-01T00:00:00Z"
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

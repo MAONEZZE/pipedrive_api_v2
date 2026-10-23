@@ -1,0 +1,23 @@
+$kind: http-request
+id: cd89329a-c666-4533-95db-2e52f033847d
+description: Deletes multiple products from a deal. If no product IDs are specified, up to 100 products will be removed from the deal. A maximum of 100 product IDs can be provided per request.
+url: "{{baseUrl}}/deals/:id/products?ids=<integer>,<integer>"
+method: DELETE
+headers:
+  Accept: application/json
+queryParams:
+  - key: ids
+    value: <integer>,<integer>
+    description: Comma-separated list of deal product IDs to delete. If not provided, all deal products will be deleted up to 100 items. Maximum 100 IDs allowed.
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete many products from a deal.resources/examples
+order: 4000

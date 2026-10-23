@@ -1,0 +1,22 @@
+$kind: http-request
+id: 8a3c0185-5f9c-4368-a023-7e54e47b3851
+description: Deletes a user follower from the deal.
+url: "{{baseUrl}}/deals/:id/followers/:follower_id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+  - key: follower_id
+    value: <integer>
+    description: (Required) The ID of the following user
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a follower from a deal.resources/examples
+order: 10000

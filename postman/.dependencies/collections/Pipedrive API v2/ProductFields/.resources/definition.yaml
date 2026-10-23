@@ -1,0 +1,5 @@
+$kind: collection
+id: 0f3143d5-a527-4446-b910-856ae0c34602
+description: |
+  Product fields represent the schema for a product in the context of the company of the authorized user. Each company can have a different schema for their products, with various custom fields.
+order: 8000

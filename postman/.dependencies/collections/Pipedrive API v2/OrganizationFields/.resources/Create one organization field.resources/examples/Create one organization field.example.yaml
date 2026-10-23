@@ -1,0 +1,106 @@
+$kind: http-example
+id: 38dcb811-5526-40c4-8410-3facf11009b5
+request:
+  url: "{{baseUrl}}/organizationFields"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "field_name": "<string>",
+        "field_type": "<string>",
+        "options": [
+          {
+            "label": "<string>"
+          },
+          {
+            "label": "<string>"
+          }
+        ],
+        "ui_visibility": {
+          "add_visible_flag": false,
+          "details_visible_flag": true,
+          "show_in_add_deal_dialog": {
+            "show": false,
+            "order": null
+          },
+          "show_in_add_person_dialog": {
+            "show": false,
+            "order": null
+          },
+          "key_0": 5639,
+          "key_1": 1787,
+          "key_2": 6758,
+          "key_3": "string"
+        },
+        "important_fields": {
+          "enabled": false
+        },
+        "required_fields": {
+          "enabled": false,
+          "key_0": "string",
+          "key_1": 6816.565034665212
+        }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Industry",
+          "field_code": "946947d1b02fd3ef20798d6112ec5d895a686a21",
+          "field_type": "enum",
+          "options": [
+            {
+              "id": 1,
+              "label": "Technology"
+            },
+            {
+              "id": 2,
+              "label": "Finance"
+            },
+            {
+              "id": 3,
+              "label": "Healthcare"
+            }
+          ],
+          "subfields": null,
+          "is_custom_field": true,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true,
+            "org_detail_visible_flag": true,
+            "person_detail_visible_flag": false,
+            "deal_detail_visible_flag": false,
+            "show_in_add_deal_dialog": {
+              "show": false,
+              "order": null
+            },
+            "show_in_add_person_dialog": {
+              "show": true,
+              "order": 2
+            }
+          },
+          "important_fields": {
+            "enabled": false,
+            "stage_ids": []
+          },
+          "required_fields": {
+            "enabled": false
+          }
+        }
+      }
+order: 1000

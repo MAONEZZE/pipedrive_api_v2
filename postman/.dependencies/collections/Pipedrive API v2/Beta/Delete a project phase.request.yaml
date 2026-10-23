@@ -1,0 +1,19 @@
+$kind: http-request
+id: 226f9b52-42d3-483b-ad7a-9260775cfb70
+description: Marks a project phase as deleted.
+url: "{{baseUrl}}/phases/:id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project phase
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a project phase.resources/examples
+order: 24000

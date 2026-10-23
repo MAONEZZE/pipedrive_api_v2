@@ -1,0 +1,39 @@
+$kind: http-example
+id: f21a8d35-360d-468d-95ae-77c12e5ce3a8
+request:
+  url: "{{baseUrl}}/pipelines"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "name": "<string>",
+        "is_deal_probability_enabled": false
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "id": 1,
+          "name": "Pipeline Name",
+          "order_nr": 1,
+          "is_deleted": false,
+          "is_deal_probability_enabled": true,
+          "add_time": "2024-01-01T00:00:00Z",
+          "update_time": "2024-01-01T00:00:00Z"
+        }
+      }
+order: 1000

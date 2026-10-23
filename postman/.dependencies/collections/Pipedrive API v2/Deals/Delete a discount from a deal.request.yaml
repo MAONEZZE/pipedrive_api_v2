@@ -1,0 +1,22 @@
+$kind: http-request
+id: c4c0b36c-103f-4940-8d17-2b82a6113c5f
+description: Removes a discount from a deal, changing the deal value if the deal has one-time products attached.
+url: "{{baseUrl}}/deals/:id/discounts/:discount_id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+  - key: discount_id
+    value: <uuid>
+    description: (Required) The ID of the discount
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a discount from a deal.resources/examples
+order: 15000

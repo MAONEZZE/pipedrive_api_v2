@@ -1,0 +1,120 @@
+$kind: http-example
+id: 14be68a8-603c-4916-bab2-8bfebfbdbb90
+request:
+  url: "{{baseUrl}}/personFields?include_fields=<string>&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    include_fields: <string>
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": [
+          {
+            "field_name": "Person Name",
+            "field_code": "name",
+            "description": "The name of the person",
+            "field_type": "varchar",
+            "options": null,
+            "subfields": null,
+            "is_custom_field": false,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true,
+              "show_in_add_deal_dialog": {
+                "show": true,
+                "order": 1
+              }
+            },
+            "important_fields": {
+              "enabled": false,
+              "stage_ids": []
+            },
+            "required_fields": {
+              "enabled": true
+            }
+          },
+          {
+            "field_name": "Phone",
+            "field_code": "phone",
+            "description": "Phone number for the person",
+            "field_type": "phone",
+            "options": null,
+            "subfields": null,
+            "is_custom_field": false,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true,
+              "show_in_add_deal_dialog": {
+                "show": true,
+                "order": 2
+              }
+            },
+            "important_fields": {
+              "enabled": true,
+              "stage_ids": [
+                1,
+                2,
+                3
+              ]
+            },
+            "required_fields": {
+              "enabled": false
+            }
+          },
+          {
+            "field_name": "Lead Source",
+            "field_code": "40characterhashforcustomfieldidentifier",
+            "description": "The source where the lead came from",
+            "field_type": "enum",
+            "options": [
+              {
+                "id": 1,
+                "label": "Inbound"
+              },
+              {
+                "id": 2,
+                "label": "Outbound"
+              }
+            ],
+            "subfields": null,
+            "is_custom_field": true,
+            "is_optional_response_field": false,
+            "ui_visibility": {
+              "add_visible_flag": true,
+              "details_visible_flag": true,
+              "show_in_add_deal_dialog": {
+                "show": false,
+                "order": null
+              }
+            },
+            "important_fields": {
+              "enabled": false,
+              "stage_ids": []
+            },
+            "required_fields": {
+              "enabled": false
+            }
+          }
+        ],
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

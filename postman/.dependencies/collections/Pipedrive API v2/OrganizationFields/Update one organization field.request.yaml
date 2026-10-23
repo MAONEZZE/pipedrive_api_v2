@@ -1,0 +1,49 @@
+$kind: http-request
+id: f8b71903-6fdd-408d-b0d1-2655d51bb820
+description: Updates an organization custom field. The field_code and field_type cannot be changed. At least one field must be provided in the request body.
+url: "{{baseUrl}}/organizationFields/:field_code"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+body:
+  type: json
+  content: |-
+    {
+      "field_name": "<string>",
+      "ui_visibility": {
+        "add_visible_flag": false,
+        "details_visible_flag": true,
+        "show_in_add_deal_dialog": {
+          "show": false,
+          "order": null
+        },
+        "show_in_add_person_dialog": {
+          "show": false,
+          "order": null
+        }
+      },
+      "important_fields": {
+        "enabled": false,
+        "key_0": true,
+        "key_1": 3635.3658145414356,
+        "key_2": "string",
+        "key_3": 5679
+      },
+      "required_fields": {
+        "enabled": false,
+        "key_0": "string"
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update one organization field.resources/examples
+order: 4000

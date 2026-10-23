@@ -1,0 +1,19 @@
+$kind: http-request
+id: ba3ceeac-6a8f-4af3-9af3-d13faf007e24
+description: Marks an activity as deleted. After 30 days, the activity will be permanently deleted.
+url: "{{baseUrl}}/activities/:id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the activity
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete an activity.resources/examples
+order: 3000

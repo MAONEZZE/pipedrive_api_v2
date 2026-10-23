@@ -1,0 +1,19 @@
+$kind: http-request
+id: 4b551a0b-aa8b-4988-af4d-d13d5c4bca50
+description: Marks a project as deleted.
+url: "{{baseUrl}}/projects/:id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a project.resources/examples
+order: 6000

@@ -1,0 +1,89 @@
+$kind: http-example
+id: 69a291be-008e-4798-b239-9f53de173f23
+request:
+  url: "{{baseUrl}}/dealFields/:field_code"
+  method: PATCH
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  pathVariables:
+    - key: field_code
+      value: <string>
+      description: (Required) The unique code identifying the field
+  body:
+    type: json
+    content: |-
+      {
+        "field_name": "<string>",
+        "ui_visibility": {
+          "add_visible_flag": false,
+          "details_visible_flag": true,
+          "projects_detail_visible_flag": false,
+          "show_in_pipelines": {
+            "show_in_all": true,
+            "pipeline_ids": [
+              "<integer>",
+              "<integer>"
+            ]
+          },
+          "key_0": 1787.177922783847,
+          "key_1": "string",
+          "key_2": "string",
+          "key_3": false
+        },
+        "important_fields": {
+          "enabled": false,
+          "key_0": 8913,
+          "key_1": false,
+          "key_2": true
+        },
+        "required_fields": {
+          "enabled": false,
+          "statuses": {},
+          "key_0": true
+        },
+        "description": "<string>"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Deal Title",
+          "field_code": "title",
+          "description": "The title or name of the deal",
+          "field_type": "varchar",
+          "options": null,
+          "subfields": null,
+          "is_custom_field": false,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true,
+            "projects_detail_visible_flag": true,
+            "show_in_pipelines": {
+              "show_in_all": true,
+              "pipeline_ids": []
+            }
+          },
+          "important_fields": {
+            "enabled": false,
+            "stage_ids": []
+          },
+          "required_fields": {
+            "enabled": false,
+            "stage_ids": [],
+            "statuses": {}
+          }
+        }
+      }
+order: 1000

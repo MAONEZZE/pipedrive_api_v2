@@ -1,0 +1,5 @@
+$kind: collection
+id: b4bb0c80-d3e0-4d41-96ce-acefd2126e5e
+description: |
+  Project phases are the stages within a project board that define the workflow for projects. Each phase belongs to a board and can contain multiple projects.
+order: 20000

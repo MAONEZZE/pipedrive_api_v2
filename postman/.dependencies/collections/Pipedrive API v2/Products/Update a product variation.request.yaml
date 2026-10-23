@@ -1,0 +1,33 @@
+$kind: http-request
+id: fd11e72c-a105-40d7-8378-2a5763e08c61
+description: Updates product variation data.
+url: "{{baseUrl}}/products/:id/variations/:product_variation_id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the product
+  - key: product_variation_id
+    value: <integer>
+    description: (Required) The ID of the product variation
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "prices": [
+        "<object>",
+        "<object>"
+      ]
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update a product variation.resources/examples
+order: 14000

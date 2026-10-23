@@ -1,0 +1,22 @@
+$kind: http-request
+id: c5043a07-b77d-4972-b043-5780b05d2108
+description: Deletes a user follower from the person.
+url: "{{baseUrl}}/persons/:id/followers/:follower_id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the person
+  - key: follower_id
+    value: <integer>
+    description: (Required) The ID of the following user
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a follower from a person.resources/examples
+order: 9000

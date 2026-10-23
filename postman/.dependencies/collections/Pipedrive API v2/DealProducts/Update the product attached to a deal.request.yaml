@@ -1,0 +1,41 @@
+$kind: http-request
+id: 2744e314-169e-4a54-8a73-4bcfae15febd
+description: Updates the details of the product that has been attached to a deal.
+url: "{{baseUrl}}/deals/:id/products/:product_attachment_id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the deal
+  - key: product_attachment_id
+    value: <integer>
+    description: (Required) The ID of the deal-product (the ID of the product attached to the deal)
+body:
+  type: json
+  content: |-
+    {
+      "product_id": "<integer>",
+      "item_price": "<number>",
+      "quantity": "<number>",
+      "tax": 0,
+      "comments": "<string>",
+      "discount": 0,
+      "is_enabled": true,
+      "tax_method": "<string>",
+      "discount_type": "percentage",
+      "product_variation_id": "<integer>",
+      "billing_frequency": "<string>",
+      "billing_frequency_cycles": "<integer>",
+      "billing_start_date": "<date>"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update the product attached to a deal.resources/examples
+order: 5000

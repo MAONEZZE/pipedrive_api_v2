@@ -1,0 +1,73 @@
+$kind: http-example
+id: f606b0f4-ef27-444f-8d91-1cba9d504098
+request:
+  url: "{{baseUrl}}/projects/search?term=<string>&fields=<string>&exact_match=<boolean>&person_id=<integer>&organization_id=<integer>&limit=100&cursor=<string>"
+  method: GET
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  queryParams:
+    term: <string>
+    fields: <string>
+    exact_match: <boolean>
+    person_id: <integer>
+    organization_id: <integer>
+    limit: "100"
+    cursor: <string>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "items": [
+            {
+              "result_score": 0.8412,
+              "item": {
+                "id": 1,
+                "type": "project",
+                "title": "Office renovation",
+                "status": "open",
+                "owner": {
+                  "id": 1
+                },
+                "board_id": 2,
+                "phase": {
+                  "id": 3,
+                  "name": "In progress"
+                },
+                "person": {
+                  "id": 10,
+                  "name": "Jane Doe"
+                },
+                "organization": {
+                  "id": 5,
+                  "name": "Pipedrive",
+                  "address": null
+                },
+                "deal": {
+                  "id": 42,
+                  "title": "Renovation deal"
+                },
+                "deal_count": 1,
+                "description": "Full office renovation project",
+                "end_date": "2025-12-31",
+                "custom_fields": [],
+                "notes": []
+              }
+            }
+          ]
+        },
+        "additional_data": {
+          "next_cursor": "eyJmaWVsZCI6ImlkIiwiZmllbGRWYWx1ZSI6Nywic29ydERpcmVjdGlvbiI6ImFzYyIsImlkIjo3fQ"
+        }
+      }
+order: 1000

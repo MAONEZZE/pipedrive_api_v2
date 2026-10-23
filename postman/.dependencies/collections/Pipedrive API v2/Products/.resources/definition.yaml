@@ -1,0 +1,5 @@
+$kind: collection
+id: 25337544-ede8-4230-abf8-fe077c0c9566
+description: |
+  Products are the goods or services you are dealing with. Each product can have N different price points - firstly, each product can have a price in N different currencies, and secondly, each product can have N variations of itself, each having N prices in different currencies. Note that only one price per variation per currency is supported. Products can be instantiated to deals. In the context of instantiation, a custom price, quantity and discount can be applied.
+order: 7000

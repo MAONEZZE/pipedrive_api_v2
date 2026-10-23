@@ -1,0 +1,45 @@
+$kind: http-example
+id: 0c8881f5-9eae-46da-a3c2-777152041416
+request:
+  url: "{{baseUrl}}/stages"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "name": "<string>",
+        "pipeline_id": "<integer>",
+        "deal_probability": "<integer>",
+        "is_deal_rot_enabled": "<boolean>",
+        "days_to_rotten": "<integer>"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "id": 1,
+          "order_nr": 1,
+          "name": "Stage Name",
+          "is_deleted": false,
+          "deal_probability": 100,
+          "pipeline_id": 1,
+          "is_deal_rot_enabled": true,
+          "days_to_rotten": 2,
+          "add_time": "2024-01-01T00:00:00Z",
+          "update_time": "2024-01-01T00:00:00Z"
+        }
+      }
+order: 1000

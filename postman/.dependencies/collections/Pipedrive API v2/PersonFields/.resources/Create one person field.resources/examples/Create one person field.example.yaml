@@ -1,0 +1,89 @@
+$kind: http-example
+id: f72a370c-315c-4e0d-9a69-31b62791aa34
+request:
+  url: "{{baseUrl}}/personFields"
+  method: POST
+  headers:
+    - key: x-api-token
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+    - key: Accept
+      value: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "field_name": "<string>",
+        "field_type": "<string>",
+        "options": [
+          {
+            "label": "<string>"
+          },
+          {
+            "label": "<string>"
+          }
+        ],
+        "ui_visibility": {
+          "add_visible_flag": false,
+          "details_visible_flag": true,
+          "show_in_add_deal_dialog": {
+            "show": false,
+            "order": null
+          },
+          "key_0": false
+        },
+        "important_fields": {
+          "enabled": false,
+          "key_0": "string"
+        },
+        "required_fields": {
+          "enabled": false,
+          "key_0": true
+        }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "data": {
+          "field_name": "Lead Source",
+          "field_code": "946947d1b02fd3ef20798d6112ec5d895a686a21",
+          "description": "The source where the lead came from",
+          "field_type": "enum",
+          "options": [
+            {
+              "id": 1,
+              "label": "Inbound"
+            },
+            {
+              "id": 2,
+              "label": "Outbound"
+            }
+          ],
+          "subfields": null,
+          "is_custom_field": true,
+          "is_optional_response_field": false,
+          "ui_visibility": {
+            "add_visible_flag": true,
+            "details_visible_flag": true,
+            "show_in_add_deal_dialog": {
+              "show": false,
+              "order": null
+            }
+          },
+          "important_fields": {
+            "enabled": false,
+            "stage_ids": []
+          },
+          "required_fields": {
+            "enabled": false
+          }
+        }
+      }
+order: 1000

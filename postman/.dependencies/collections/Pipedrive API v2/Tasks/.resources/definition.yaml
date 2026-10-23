@@ -1,0 +1,5 @@
+$kind: collection
+id: bc012ccd-6760-4ca8-8780-7a35197c5e6d
+description: |
+  Tasks are action items that can be associated with a project.
+order: 23000

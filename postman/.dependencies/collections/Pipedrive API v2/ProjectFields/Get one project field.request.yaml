@@ -1,0 +1,19 @@
+$kind: http-request
+id: 2aca2f27-1b1d-4644-9016-8a4395a58fec
+description: Returns metadata about a specific project field.
+url: "{{baseUrl}}/projectFields/:field_code"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get one project field.resources/examples
+order: 3000

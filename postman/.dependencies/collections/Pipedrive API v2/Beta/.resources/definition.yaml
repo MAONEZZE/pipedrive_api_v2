@@ -1,0 +1,5 @@
+$kind: collection
+id: 7d8fd836-1276-49ec-8d7e-7ae764243e24
+description: |
+  Beta endpoints are endpoints that may have changes without a regular 60-90 day notice period.
+order: 24000

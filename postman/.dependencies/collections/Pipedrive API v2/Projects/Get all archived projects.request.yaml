@@ -1,0 +1,31 @@
+$kind: http-request
+id: 5ec3b0fa-a25e-405f-89fb-db1debe10c99
+description: Returns all archived projects.
+url: "{{baseUrl}}/projects/archived?filter_id=<integer>&status=<string>&phase_id=<integer>&limit=<integer>&cursor=<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: filter_id
+    value: <integer>
+    description: If supplied, only projects matching the specified filter are returned
+  - key: status
+    value: <string>
+    description: If supplied, includes only projects with the specified statuses. Possible values are `open`, `completed`, `canceled` and `deleted`. By default `deleted` projects are not returned.
+  - key: phase_id
+    value: <integer>
+    description: If supplied, only projects in the specified phase are returned
+  - key: limit
+    value: <integer>
+    description: For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  - key: cursor
+    value: <string>
+    description: For pagination, the marker (an opaque string value) representing the first item on the next page
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get all archived projects.resources/examples
+order: 3000

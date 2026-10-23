@@ -1,0 +1,19 @@
+$kind: http-request
+id: e82d310b-4fae-4225-a9d7-2b5de9de9586
+description: Marks a organization as deleted. After 30 days, the organization will be permanently deleted.
+url: "{{baseUrl}}/organizations/:id"
+method: DELETE
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the organization
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Delete a organization.resources/examples
+order: 3000

@@ -1,0 +1,19 @@
+$kind: http-request
+id: 56591936-6f68-433c-9dc4-774d6f170709
+description: Lists the users permitted to access a project.
+url: "{{baseUrl}}/projects/:id/permittedUsers"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/List permitted users.resources/examples
+order: 9000

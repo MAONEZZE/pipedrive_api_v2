@@ -1,0 +1,5 @@
+$kind: collection
+id: 9944bd3c-3c29-4164-b6fd-c4665dbd11d1
+description: |
+  Persons are your contacts, the customers you are doing deals with. Each person can belong to an organization. Persons should not be confused with users.
+order: 12000

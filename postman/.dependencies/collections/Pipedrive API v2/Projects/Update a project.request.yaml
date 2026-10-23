@@ -1,0 +1,55 @@
+$kind: http-request
+id: de3e46b7-c413-43d2-8e88-110793f2a465
+description: Updates the properties of a project.
+url: "{{baseUrl}}/projects/:id"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: <integer>
+    description: (Required) The ID of the project
+body:
+  type: json
+  content: |-
+    {
+      "title": "<string>",
+      "description": "<string>",
+      "status": "<string>",
+      "board_id": "<integer>",
+      "phase_id": "<integer>",
+      "owner_id": "<integer>",
+      "start_date": "<date>",
+      "end_date": "<date>",
+      "deal_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "person_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "org_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "label_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "health_status": "<integer>",
+      "template_id": "<integer>",
+      "custom_fields": {
+        "key_0": "string",
+        "key_1": 5485
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Update a project.resources/examples
+order: 5000

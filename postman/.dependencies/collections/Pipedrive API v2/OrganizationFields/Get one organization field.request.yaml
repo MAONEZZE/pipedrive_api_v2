@@ -1,0 +1,23 @@
+$kind: http-request
+id: 89989c22-c36e-49f8-b667-83af6d888f3f
+description: Returns metadata about a specific organization field.
+url: "{{baseUrl}}/organizationFields/:field_code?include_fields=<string>,<string>"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: include_fields
+    value: <string>,<string>
+    description: Optional comma separated string array of additional data namespaces to include in response
+pathVariables:
+  - key: field_code
+    value: <string>
+    description: (Required) The unique code identifying the field
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Get one organization field.resources/examples
+order: 3000

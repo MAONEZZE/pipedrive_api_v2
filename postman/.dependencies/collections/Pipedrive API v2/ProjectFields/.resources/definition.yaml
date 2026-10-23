@@ -1,0 +1,5 @@
+$kind: collection
+id: fae51648-1558-4f63-b495-c453e65cba83
+description: |
+  Project fields represent the schema for a project in the context of the company of the authorized user. Each company can have a different schema for their projects, with various custom fields.
+order: 22000

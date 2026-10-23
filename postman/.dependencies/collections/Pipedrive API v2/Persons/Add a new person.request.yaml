@@ -1,0 +1,88 @@
+$kind: http-request
+id: 7e03846a-a1d8-43a0-84d4-4891fa4c5105
+description: Adds a new person. <br>If the company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also accept and return the `marketing_status` field. <br>The `im`, `postal_address`, `notes`, `birthday` and `job_title` fields don't exist by default in Pipedrive and are only created when you set up your contact sync — attempting to set any of them without contact sync enabled returns a 403.
+url: "{{baseUrl}}/persons"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "<string>",
+      "owner_id": "<integer>",
+      "org_id": "<integer>",
+      "add_time": "<string>",
+      "emails": [
+        {
+          "value": "<string>",
+          "primary": "<boolean>",
+          "label": "<string>"
+        },
+        {
+          "value": "<string>",
+          "primary": "<boolean>",
+          "label": "<string>"
+        }
+      ],
+      "phones": [
+        {
+          "value": "<string>",
+          "primary": "<boolean>",
+          "label": "<string>"
+        },
+        {
+          "value": "<string>",
+          "primary": "<boolean>",
+          "label": "<string>"
+        }
+      ],
+      "visible_to": "<integer>",
+      "label_ids": [
+        "<integer>",
+        "<integer>"
+      ],
+      "postal_address": {
+        "value": "<string>",
+        "country": "<string>",
+        "admin_area_level_1": "<string>",
+        "admin_area_level_2": "<string>",
+        "locality": "<string>",
+        "sublocality": "<string>",
+        "route": "<string>",
+        "street_number": "<string>",
+        "subpremise": "<string>",
+        "postal_code": "<string>"
+      },
+      "notes": "<string>",
+      "im": [
+        {
+          "value": "<string>",
+          "primary": "<boolean>",
+          "label": "<string>"
+        },
+        {
+          "value": "<string>",
+          "primary": "<boolean>",
+          "label": "<string>"
+        }
+      ],
+      "birthday": "<string>",
+      "job_title": "<string>",
+      "marketing_status": "<string>",
+      "custom_fields": {
+        "key_0": 7939.457835448893,
+        "key_1": 3835,
+        "key_2": "string",
+        "key_3": 6801.045205242935
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-token
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Add a new person.resources/examples
+order: 2000
