@@ -1,0 +1,15 @@
+# Use this workspace to collaborate
+workspace:
+  id: 3473892f-8de3-42d3-8706-d68f98583aef
+
+dependencies:
+  collections:
+    14918448-95516085-5e8d-40db-8509-258b8b3b22a9:
+      name: Pipedrive API v2
+      path: ../postman/.dependencies/collections/Pipedrive API v2
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/
